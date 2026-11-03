@@ -1,0 +1,81 @@
+{
+  "univariable_frac": 0.95,
+  "familia_mal": {
+    "cos": 16,
+    "sin": 3,
+    "lin": 1
+  },
+  "auc_d_por_backbone": {
+    "mean": {
+      "densenet121": 0.6743,
+      "efficientnet_b0": 0.6491,
+      "resnet18_robusto": 0.7149,
+      "resnet50": 0.6774
+    },
+    "std": {
+      "densenet121": 0.0071,
+      "efficientnet_b0": 0.0123,
+      "resnet18_robusto": 0.005,
+      "resnet50": 0.0075
+    }
+  },
+  "g_mw": {
+    "U": 178399.0,
+    "p": 2.1477484845215372e-32,
+    "g_mal": 0.481,
+    "g_ben": -0.032
+  },
+  "th_youden_val": 0.1296,
+  "calibracion": [
+    {
+      "p_media": 0.275,
+      "tasa_maligna": 0.098,
+      "n": 102
+    },
+    {
+      "p_media": 0.384,
+      "tasa_maligna": 0.297,
+      "n": 101
+    },
+    {
+      "p_media": 0.444,
+      "tasa_maligna": 0.218,
+      "n": 101
+    },
+    {
+      "p_media": 0.486,
+      "tasa_maligna": 0.267,
+      "n": 101
+    },
+    {
+      "p_media": 0.526,
+      "tasa_maligna": 0.416,
+      "n": 101
+    },
+    {
+      "p_media": 0.565,
+      "tasa_maligna": 0.416,
+      "n": 101
+    },
+    {
+      "p_media": 0.601,
+      "tasa_maligna": 0.505,
+      "n": 101
+    },
+    {
+      "p_media": 0.642,
+      "tasa_maligna": 0.515,
+      "n": 101
+    },
+    {
+      "p_media": 0.69,
+      "tasa_maligna": 0.653,
+      "n": 101
+    },
+    {
+      "p_media": 0.792,
+      "tasa_maligna": 0.745,
+      "n": 102
+    }
+  ]
+}

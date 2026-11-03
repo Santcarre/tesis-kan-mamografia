@@ -1,0 +1,25 @@
+{
+ "region_reportada": {
+  "acuerdo_pct": 100.0,
+  "n": 40
+ },
+ "birads_reportada": {
+  "acuerdo_pct": 100.0,
+  "n": 40
+ },
+ "menciona_masa": {
+  "acuerdo_pct": 100.0,
+  "n": 40,
+  "kappa": 1.0
+ },
+ "menciona_calc": {
+  "acuerdo_pct": 100.0,
+  "n": 40,
+  "kappa": 1.0
+ },
+ "sin_respaldo": {
+  "acuerdo_pct": 87.5,
+  "n": 40,
+  "kappa": 0.701
+ }
+}

@@ -1,0 +1,51 @@
+{
+  "robusto": {
+    "semillas": [
+      1,
+      2,
+      3
+    ],
+    "AUC prueba (red)": {
+      "media": 0.7069,
+      "de": 0.0076,
+      "min": 0.6998,
+      "max": 0.715
+    },
+    "AUC u0 (prueba)": {
+      "media": 0.706,
+      "de": 0.0106,
+      "min": 0.6939,
+      "max": 0.7135
+    },
+    "AUC u0 (entren.)": {
+      "media": 0.9483,
+      "de": 0.0095,
+      "min": 0.9412,
+      "max": 0.9591
+    },
+    "AUC logistica u0": {
+      "media": 0.706,
+      "de": 0.0106,
+      "min": 0.6939,
+      "max": 0.7135
+    },
+    "AUC logistica 512 (C=0,01)": {
+      "media": 0.711,
+      "de": 0.0027,
+      "min": 0.7091,
+      "max": 0.714
+    },
+    "Sens. u0 (Youden val)": {
+      "media": 0.7289,
+      "de": 0.0676,
+      "min": 0.6675,
+      "max": 0.8014
+    },
+    "Espec. u0 (Youden val)": {
+      "media": 0.5471,
+      "de": 0.0712,
+      "min": 0.4882,
+      "max": 0.6263
+    }
+  }
+}

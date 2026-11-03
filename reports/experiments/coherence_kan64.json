@@ -1,0 +1,23 @@
+{
+  "n": 200,
+  "seed": 42,
+  "nota": "Formula canonica univariable: dg/dgap tiene direccion fija r0 (S-PCA64) y solo cambia el escalar dg/du0 por caso. El ranking KAN es por tanto constante salvo signo; la comparacion honesta es Top-1/dir vs LIME/lineal, no rho por caso.",
+  "kan_direccion_fija": true,
+  "rho_kan_vs_lineal": {
+    "mean": -0.11903904488676026,
+    "median": -0.10620783551344114
+  },
+  "rho_lime_vs_lineal": {
+    "mean": 0.999846902501688,
+    "median": 0.9999029930705758
+  },
+  "rho_kan_vs_lime": {
+    "mean": -0.1191947374321935,
+    "median": -0.10650234318673396
+  },
+  "top1_kan_vs_lineal": "0/200",
+  "top1_lime_vs_lineal": "197/200",
+  "top1_kan_vs_lime": "0/200",
+  "canal_top1_kan": 191,
+  "segundos": 9.8
+}

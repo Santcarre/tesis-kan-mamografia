@@ -1,0 +1,2164 @@
+{
+ "archivo": "estudio_informes_llm.csv",
+ "n_informes": 3680,
+ "n_imagenes": 368,
+ "n_pacientes": 212,
+ "modelos": {
+  "qwen2.5:1.5b-instruct": {
+   "ciego": {
+    "region_error": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "region_omitida": {
+     "k": 367,
+     "n": 368,
+     "pct": 99.7,
+     "ic95_wilson": [
+      98.5,
+      100.0
+     ],
+     "ic95_paciente": [
+      99.2,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 176,
+     "n": 368,
+     "pct": 47.8,
+     "ic95_wilson": [
+      42.8,
+      52.9
+     ],
+     "ic95_paciente": [
+      42.9,
+      52.7
+     ]
+    },
+    "birads_incompatible": {
+     "k": 76,
+     "n": 368,
+     "pct": 20.7,
+     "ic95_wilson": [
+      16.8,
+      25.1
+     ],
+     "ic95_paciente": [
+      15.9,
+      25.5
+     ]
+    },
+    "birads_transmitida": {
+     "k": 65,
+     "n": 368,
+     "pct": 17.7,
+     "ic95_wilson": [
+      14.1,
+      21.9
+     ],
+     "ic95_paciente": [
+      13.9,
+      21.8
+     ]
+    },
+    "birads_coherente": {
+     "k": 65,
+     "n": 368,
+     "pct": 17.7,
+     "ic95_wilson": [
+      14.1,
+      21.9
+     ],
+     "ic95_paciente": [
+      13.8,
+      21.8
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 3,
+     "n": 368,
+     "pct": 0.8,
+     "ic95_wilson": [
+      0.3,
+      2.4
+     ],
+     "ic95_paciente": [
+      0.0,
+      1.9
+     ]
+    },
+    "sin_respaldo": {
+     "k": 181,
+     "n": 368,
+     "pct": 49.2,
+     "ic95_wilson": [
+      44.1,
+      54.3
+     ],
+     "ic95_paciente": [
+      44.1,
+      54.2
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 172,
+     "n": 368,
+     "pct": 46.7,
+     "ic95_wilson": [
+      41.7,
+      51.8
+     ],
+     "ic95_paciente": [
+      41.8,
+      51.9
+     ]
+    },
+    "repetitivo": {
+     "k": 102,
+     "n": 368,
+     "pct": 27.7,
+     "ic95_wilson": [
+      23.4,
+      32.5
+     ],
+     "ic95_paciente": [
+      23.3,
+      32.3
+     ]
+    },
+    "truncado": {
+     "k": 107,
+     "n": 368,
+     "pct": 29.1,
+     "ic95_wilson": [
+      24.7,
+      33.9
+     ],
+     "ic95_paciente": [
+      24.9,
+      33.5
+     ]
+    },
+    "sin_respaldo_media": 0.82,
+    "categorias": {
+     "margen": 44,
+     "forma": 65,
+     "tamano": 55,
+     "otras_caracteristicas": 75,
+     "calcificacion_morfologia": 0,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 26,
+     "tipo_lesion": 27,
+     "niega_hallazgo": 6,
+     "lateralidad_contraria": 3
+    },
+    "region_reportada": {
+     "ninguna": 367,
+     "RA": 1
+    },
+    "segundos_por_informe": 3.23
+   },
+   "evidencia": {
+    "region_error": {
+     "k": 209,
+     "n": 368,
+     "pct": 56.8,
+     "ic95_wilson": [
+      51.7,
+      61.8
+     ],
+     "ic95_paciente": [
+      51.1,
+      62.4
+     ]
+    },
+    "region_omitida": {
+     "k": 2,
+     "n": 368,
+     "pct": 0.5,
+     "ic95_wilson": [
+      0.1,
+      2.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      1.4
+     ]
+    },
+    "copia_region": {
+     "k": 366,
+     "n": 368,
+     "pct": 99.5,
+     "ic95_wilson": [
+      98.0,
+      99.9
+     ],
+     "ic95_paciente": [
+      98.6,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 10,
+     "n": 368,
+     "pct": 2.7,
+     "ic95_wilson": [
+      1.5,
+      4.9
+     ],
+     "ic95_paciente": [
+      1.3,
+      4.5
+     ]
+    },
+    "birads_incompatible": {
+     "k": 54,
+     "n": 368,
+     "pct": 14.7,
+     "ic95_wilson": [
+      11.4,
+      18.7
+     ],
+     "ic95_paciente": [
+      10.9,
+      18.8
+     ]
+    },
+    "birads_transmitida": {
+     "k": 358,
+     "n": 368,
+     "pct": 97.3,
+     "ic95_wilson": [
+      95.1,
+      98.5
+     ],
+     "ic95_paciente": [
+      95.5,
+      98.7
+     ]
+    },
+    "birads_coherente": {
+     "k": 358,
+     "n": 368,
+     "pct": 97.3,
+     "ic95_wilson": [
+      95.1,
+      98.5
+     ],
+     "ic95_paciente": [
+      95.5,
+      98.9
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo": {
+     "k": 9,
+     "n": 368,
+     "pct": 2.4,
+     "ic95_wilson": [
+      1.3,
+      4.6
+     ],
+     "ic95_paciente": [
+      1.1,
+      4.1
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 8,
+     "n": 368,
+     "pct": 2.2,
+     "ic95_wilson": [
+      1.1,
+      4.2
+     ],
+     "ic95_paciente": [
+      0.8,
+      3.8
+     ]
+    },
+    "repetitivo": {
+     "k": 28,
+     "n": 368,
+     "pct": 7.6,
+     "ic95_wilson": [
+      5.3,
+      10.8
+     ],
+     "ic95_paciente": [
+      5.0,
+      10.4
+     ]
+    },
+    "truncado": {
+     "k": 34,
+     "n": 368,
+     "pct": 9.2,
+     "ic95_wilson": [
+      6.7,
+      12.6
+     ],
+     "ic95_paciente": [
+      6.5,
+      12.4
+     ]
+    },
+    "sin_respaldo_media": 0.02,
+    "categorias": {
+     "margen": 2,
+     "forma": 0,
+     "tamano": 5,
+     "otras_caracteristicas": 0,
+     "calcificacion_morfologia": 0,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 0,
+     "tipo_lesion": 1,
+     "niega_hallazgo": 0,
+     "lateralidad_contraria": 1
+    },
+    "region_reportada": {
+     "CIE": 169,
+     "CII": 91,
+     "CSE": 44,
+     "RA": 43,
+     "CSI": 19,
+     "ninguna": 2
+    },
+    "segundos_por_informe": 2.71
+   }
+  },
+  "qwen2.5:3b": {
+   "ciego": {
+    "region_error": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "region_omitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 14,
+     "n": 368,
+     "pct": 3.8,
+     "ic95_wilson": [
+      2.3,
+      6.3
+     ],
+     "ic95_paciente": [
+      1.9,
+      5.8
+     ]
+    },
+    "birads_incompatible": {
+     "k": 24,
+     "n": 368,
+     "pct": 6.5,
+     "ic95_wilson": [
+      4.4,
+      9.5
+     ],
+     "ic95_paciente": [
+      4.1,
+      9.1
+     ]
+    },
+    "birads_transmitida": {
+     "k": 220,
+     "n": 368,
+     "pct": 59.8,
+     "ic95_wilson": [
+      54.7,
+      64.7
+     ],
+     "ic95_paciente": [
+      53.8,
+      65.9
+     ]
+    },
+    "birads_coherente": {
+     "k": 220,
+     "n": 368,
+     "pct": 59.8,
+     "ic95_wilson": [
+      54.7,
+      64.7
+     ],
+     "ic95_paciente": [
+      53.7,
+      65.9
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 15,
+     "n": 368,
+     "pct": 4.1,
+     "ic95_wilson": [
+      2.5,
+      6.6
+     ],
+     "ic95_paciente": [
+      2.1,
+      6.5
+     ]
+    },
+    "sin_respaldo": {
+     "k": 331,
+     "n": 368,
+     "pct": 89.9,
+     "ic95_wilson": [
+      86.4,
+      92.6
+     ],
+     "ic95_paciente": [
+      86.7,
+      92.8
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 327,
+     "n": 368,
+     "pct": 88.9,
+     "ic95_wilson": [
+      85.2,
+      91.7
+     ],
+     "ic95_paciente": [
+      85.6,
+      92.0
+     ]
+    },
+    "repetitivo": {
+     "k": 28,
+     "n": 368,
+     "pct": 7.6,
+     "ic95_wilson": [
+      5.3,
+      10.8
+     ],
+     "ic95_paciente": [
+      5.0,
+      10.4
+     ]
+    },
+    "truncado": {
+     "k": 23,
+     "n": 368,
+     "pct": 6.2,
+     "ic95_wilson": [
+      4.2,
+      9.2
+     ],
+     "ic95_paciente": [
+      3.8,
+      8.9
+     ]
+    },
+    "sin_respaldo_media": 2.67,
+    "categorias": {
+     "margen": 207,
+     "forma": 240,
+     "tamano": 131,
+     "otras_caracteristicas": 238,
+     "calcificacion_morfologia": 1,
+     "distorsion_asimetria": 2,
+     "ganglios_piel_pezon": 3,
+     "densidad_mamaria": 1,
+     "tipo_lesion": 112,
+     "niega_hallazgo": 28,
+     "lateralidad_contraria": 18
+    },
+    "region_reportada": {
+     "ninguna": 368
+    },
+    "segundos_por_informe": 3.53
+   },
+   "evidencia": {
+    "region_error": {
+     "k": 209,
+     "n": 368,
+     "pct": 56.8,
+     "ic95_wilson": [
+      51.7,
+      61.8
+     ],
+     "ic95_paciente": [
+      51.1,
+      62.4
+     ]
+    },
+    "region_omitida": {
+     "k": 1,
+     "n": 368,
+     "pct": 0.3,
+     "ic95_wilson": [
+      0.0,
+      1.5
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.8
+     ]
+    },
+    "copia_region": {
+     "k": 367,
+     "n": 368,
+     "pct": 99.7,
+     "ic95_wilson": [
+      98.5,
+      100.0
+     ],
+     "ic95_paciente": [
+      99.2,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "birads_incompatible": {
+     "k": 57,
+     "n": 368,
+     "pct": 15.5,
+     "ic95_wilson": [
+      12.2,
+      19.5
+     ],
+     "ic95_paciente": [
+      11.7,
+      19.7
+     ]
+    },
+    "birads_transmitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_coherente": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo": {
+     "k": 63,
+     "n": 368,
+     "pct": 17.1,
+     "ic95_wilson": [
+      13.6,
+      21.3
+     ],
+     "ic95_paciente": [
+      13.3,
+      21.2
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 62,
+     "n": 368,
+     "pct": 16.8,
+     "ic95_wilson": [
+      13.4,
+      21.0
+     ],
+     "ic95_paciente": [
+      13.0,
+      20.8
+     ]
+    },
+    "repetitivo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "truncado": {
+     "k": 2,
+     "n": 368,
+     "pct": 0.5,
+     "ic95_wilson": [
+      0.1,
+      2.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      1.4
+     ]
+    },
+    "sin_respaldo_media": 0.24,
+    "categorias": {
+     "margen": 14,
+     "forma": 14,
+     "tamano": 11,
+     "otras_caracteristicas": 44,
+     "calcificacion_morfologia": 0,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 0,
+     "tipo_lesion": 3,
+     "niega_hallazgo": 1,
+     "lateralidad_contraria": 2
+    },
+    "region_reportada": {
+     "CIE": 169,
+     "CII": 91,
+     "CSE": 44,
+     "RA": 44,
+     "CSI": 19,
+     "varias": 1
+    },
+    "segundos_por_informe": 3.14
+   }
+  },
+  "phi3.5": {
+   "ciego": {
+    "region_error": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "region_omitida": {
+     "k": 367,
+     "n": 368,
+     "pct": 99.7,
+     "ic95_wilson": [
+      98.5,
+      100.0
+     ],
+     "ic95_paciente": [
+      99.2,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 43,
+     "n": 368,
+     "pct": 11.7,
+     "ic95_wilson": [
+      8.8,
+      15.4
+     ],
+     "ic95_paciente": [
+      8.2,
+      15.2
+     ]
+    },
+    "birads_incompatible": {
+     "k": 6,
+     "n": 368,
+     "pct": 1.6,
+     "ic95_wilson": [
+      0.7,
+      3.5
+     ],
+     "ic95_paciente": [
+      0.3,
+      3.3
+     ]
+    },
+    "birads_transmitida": {
+     "k": 223,
+     "n": 368,
+     "pct": 60.6,
+     "ic95_wilson": [
+      55.5,
+      65.5
+     ],
+     "ic95_paciente": [
+      55.0,
+      66.1
+     ]
+    },
+    "birads_coherente": {
+     "k": 223,
+     "n": 368,
+     "pct": 60.6,
+     "ic95_wilson": [
+      55.5,
+      65.5
+     ],
+     "ic95_paciente": [
+      54.7,
+      66.2
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 36,
+     "n": 368,
+     "pct": 9.8,
+     "ic95_wilson": [
+      7.2,
+      13.2
+     ],
+     "ic95_paciente": [
+      6.9,
+      12.8
+     ]
+    },
+    "sin_respaldo": {
+     "k": 322,
+     "n": 368,
+     "pct": 87.5,
+     "ic95_wilson": [
+      83.7,
+      90.5
+     ],
+     "ic95_paciente": [
+      83.9,
+      90.8
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 292,
+     "n": 368,
+     "pct": 79.3,
+     "ic95_wilson": [
+      74.9,
+      83.2
+     ],
+     "ic95_paciente": [
+      74.8,
+      83.6
+     ]
+    },
+    "repetitivo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "truncado": {
+     "k": 2,
+     "n": 368,
+     "pct": 0.5,
+     "ic95_wilson": [
+      0.1,
+      2.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      1.4
+     ]
+    },
+    "sin_respaldo_media": 2.15,
+    "categorias": {
+     "margen": 143,
+     "forma": 20,
+     "tamano": 75,
+     "otras_caracteristicas": 46,
+     "calcificacion_morfologia": 2,
+     "distorsion_asimetria": 134,
+     "ganglios_piel_pezon": 74,
+     "densidad_mamaria": 11,
+     "tipo_lesion": 249,
+     "niega_hallazgo": 13,
+     "lateralidad_contraria": 24
+    },
+    "region_reportada": {
+     "ninguna": 367,
+     "RA": 1
+    },
+    "segundos_por_informe": 4.66
+   },
+   "evidencia": {
+    "region_error": {
+     "k": 209,
+     "n": 368,
+     "pct": 56.8,
+     "ic95_wilson": [
+      51.7,
+      61.8
+     ],
+     "ic95_paciente": [
+      51.0,
+      62.6
+     ]
+    },
+    "region_omitida": {
+     "k": 4,
+     "n": 368,
+     "pct": 1.1,
+     "ic95_wilson": [
+      0.4,
+      2.8
+     ],
+     "ic95_paciente": [
+      0.3,
+      2.2
+     ]
+    },
+    "copia_region": {
+     "k": 364,
+     "n": 368,
+     "pct": 98.9,
+     "ic95_wilson": [
+      97.2,
+      99.6
+     ],
+     "ic95_paciente": [
+      97.8,
+      99.7
+     ]
+    },
+    "birads_omitida": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "birads_incompatible": {
+     "k": 57,
+     "n": 368,
+     "pct": 15.5,
+     "ic95_wilson": [
+      12.2,
+      19.5
+     ],
+     "ic95_paciente": [
+      11.7,
+      19.7
+     ]
+    },
+    "birads_transmitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_coherente": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo": {
+     "k": 5,
+     "n": 368,
+     "pct": 1.4,
+     "ic95_wilson": [
+      0.6,
+      3.1
+     ],
+     "ic95_paciente": [
+      0.3,
+      2.6
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 5,
+     "n": 368,
+     "pct": 1.4,
+     "ic95_wilson": [
+      0.6,
+      3.1
+     ],
+     "ic95_paciente": [
+      0.3,
+      2.7
+     ]
+    },
+    "repetitivo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "truncado": {
+     "k": 1,
+     "n": 368,
+     "pct": 0.3,
+     "ic95_wilson": [
+      0.0,
+      1.5
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.8
+     ]
+    },
+    "sin_respaldo_media": 0.01,
+    "categorias": {
+     "margen": 0,
+     "forma": 0,
+     "tamano": 1,
+     "otras_caracteristicas": 4,
+     "calcificacion_morfologia": 0,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 0,
+     "tipo_lesion": 0,
+     "niega_hallazgo": 0,
+     "lateralidad_contraria": 0
+    },
+    "region_reportada": {
+     "CIE": 168,
+     "CII": 91,
+     "CSE": 44,
+     "RA": 43,
+     "CSI": 18,
+     "ninguna": 4
+    },
+    "segundos_por_informe": 4.74
+   }
+  },
+  "qwen3.5:4b": {
+   "ciego": {
+    "region_error": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "region_omitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 9,
+     "n": 368,
+     "pct": 2.4,
+     "ic95_wilson": [
+      1.3,
+      4.6
+     ],
+     "ic95_paciente": [
+      1.1,
+      4.2
+     ]
+    },
+    "birads_incompatible": {
+     "k": 28,
+     "n": 368,
+     "pct": 7.6,
+     "ic95_wilson": [
+      5.3,
+      10.8
+     ],
+     "ic95_paciente": [
+      4.7,
+      11.0
+     ]
+    },
+    "birads_transmitida": {
+     "k": 359,
+     "n": 368,
+     "pct": 97.6,
+     "ic95_wilson": [
+      95.4,
+      98.7
+     ],
+     "ic95_paciente": [
+      95.9,
+      99.0
+     ]
+    },
+    "birads_coherente": {
+     "k": 359,
+     "n": 368,
+     "pct": 97.6,
+     "ic95_wilson": [
+      95.4,
+      98.7
+     ],
+     "ic95_paciente": [
+      95.9,
+      98.9
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 9,
+     "n": 368,
+     "pct": 2.4,
+     "ic95_wilson": [
+      1.3,
+      4.6
+     ],
+     "ic95_paciente": [
+      0.8,
+      4.5
+     ]
+    },
+    "sin_respaldo": {
+     "k": 37,
+     "n": 368,
+     "pct": 10.1,
+     "ic95_wilson": [
+      7.4,
+      13.6
+     ],
+     "ic95_paciente": [
+      7.0,
+      13.3
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 13,
+     "n": 368,
+     "pct": 3.5,
+     "ic95_wilson": [
+      2.1,
+      5.9
+     ],
+     "ic95_paciente": [
+      1.9,
+      5.5
+     ]
+    },
+    "repetitivo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "truncado": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo_media": 0.11,
+    "categorias": {
+     "margen": 1,
+     "forma": 1,
+     "tamano": 0,
+     "otras_caracteristicas": 1,
+     "calcificacion_morfologia": 1,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 0,
+     "tipo_lesion": 28,
+     "niega_hallazgo": 9,
+     "lateralidad_contraria": 0
+    },
+    "region_reportada": {
+     "ninguna": 368
+    },
+    "segundos_por_informe": 3.13
+   },
+   "evidencia": {
+    "region_error": {
+     "k": 208,
+     "n": 368,
+     "pct": 56.5,
+     "ic95_wilson": [
+      51.4,
+      61.5
+     ],
+     "ic95_paciente": [
+      50.6,
+      62.0
+     ]
+    },
+    "region_omitida": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "copia_region": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "birads_incompatible": {
+     "k": 57,
+     "n": 368,
+     "pct": 15.5,
+     "ic95_wilson": [
+      12.2,
+      19.5
+     ],
+     "ic95_paciente": [
+      11.6,
+      19.6
+     ]
+    },
+    "birads_transmitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_coherente": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 1,
+     "n": 368,
+     "pct": 0.3,
+     "ic95_wilson": [
+      0.0,
+      1.5
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.8
+     ]
+    },
+    "sin_respaldo": {
+     "k": 12,
+     "n": 368,
+     "pct": 3.3,
+     "ic95_wilson": [
+      1.9,
+      5.6
+     ],
+     "ic95_paciente": [
+      1.6,
+      5.1
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 4,
+     "n": 368,
+     "pct": 1.1,
+     "ic95_wilson": [
+      0.4,
+      2.8
+     ],
+     "ic95_paciente": [
+      0.3,
+      2.2
+     ]
+    },
+    "repetitivo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "truncado": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo_media": 0.03,
+    "categorias": {
+     "margen": 0,
+     "forma": 0,
+     "tamano": 0,
+     "otras_caracteristicas": 3,
+     "calcificacion_morfologia": 0,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 0,
+     "tipo_lesion": 8,
+     "niega_hallazgo": 1,
+     "lateralidad_contraria": 0
+    },
+    "region_reportada": {
+     "CIE": 170,
+     "CII": 91,
+     "CSE": 44,
+     "RA": 44,
+     "CSI": 19
+    },
+    "segundos_por_informe": 5.28
+   }
+  },
+  "gemma4:12b": {
+   "ciego": {
+    "region_error": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "region_omitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "birads_incompatible": {
+     "k": 29,
+     "n": 368,
+     "pct": 7.9,
+     "ic95_wilson": [
+      5.5,
+      11.1
+     ],
+     "ic95_paciente": [
+      4.6,
+      11.3
+     ]
+    },
+    "birads_transmitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_coherente": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "repetitivo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "truncado": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo_media": 0.0,
+    "categorias": {
+     "margen": 0,
+     "forma": 0,
+     "tamano": 0,
+     "otras_caracteristicas": 0,
+     "calcificacion_morfologia": 0,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 0,
+     "tipo_lesion": 0,
+     "niega_hallazgo": 0,
+     "lateralidad_contraria": 0
+    },
+    "region_reportada": {
+     "ninguna": 368
+    },
+    "segundos_por_informe": 8.68
+   },
+   "evidencia": {
+    "region_error": {
+     "k": 208,
+     "n": 368,
+     "pct": 56.5,
+     "ic95_wilson": [
+      51.4,
+      61.5
+     ],
+     "ic95_paciente": [
+      50.8,
+      62.0
+     ]
+    },
+    "region_omitida": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "copia_region": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_omitida": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "birads_incompatible": {
+     "k": 57,
+     "n": 368,
+     "pct": 15.5,
+     "ic95_wilson": [
+      12.2,
+      19.5
+     ],
+     "ic95_paciente": [
+      11.6,
+      19.5
+     ]
+    },
+    "birads_transmitida": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "birads_coherente": {
+     "k": 368,
+     "n": 368,
+     "pct": 100.0,
+     "ic95_wilson": [
+      99.0,
+      100.0
+     ],
+     "ic95_paciente": [
+      100.0,
+      100.0
+     ]
+    },
+    "tipo_erroneo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo_sin_tipo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "repetitivo": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "truncado": {
+     "k": 0,
+     "n": 368,
+     "pct": 0.0,
+     "ic95_wilson": [
+      0.0,
+      1.0
+     ],
+     "ic95_paciente": [
+      0.0,
+      0.0
+     ]
+    },
+    "sin_respaldo_media": 0.0,
+    "categorias": {
+     "margen": 0,
+     "forma": 0,
+     "tamano": 0,
+     "otras_caracteristicas": 0,
+     "calcificacion_morfologia": 0,
+     "distorsion_asimetria": 0,
+     "ganglios_piel_pezon": 0,
+     "densidad_mamaria": 0,
+     "tipo_lesion": 0,
+     "niega_hallazgo": 0,
+     "lateralidad_contraria": 0
+    },
+    "region_reportada": {
+     "CIE": 170,
+     "CII": 91,
+     "CSE": 44,
+     "RA": 44,
+     "CSI": 19
+    },
+    "segundos_por_informe": 12.31
+   }
+  }
+ },
+ "entre_condiciones": {
+  "region_error": {
+   "qwen2.5:1.5b-instruct": {
+    "b01": 159,
+    "b10": 0,
+    "p": 2.7369110631344083e-48,
+    "p_holm": 8.210733189403225e-48
+   },
+   "qwen2.5:3b": {
+    "b01": 159,
+    "b10": 0,
+    "p": 2.7369110631344083e-48,
+    "p_holm": 8.210733189403225e-48
+   },
+   "phi3.5": {
+    "b01": 159,
+    "b10": 0,
+    "p": 2.7369110631344083e-48,
+    "p_holm": 8.210733189403225e-48
+   },
+   "qwen3.5:4b": {
+    "b01": 160,
+    "b10": 0,
+    "p": 1.3684555315672042e-48,
+    "p_holm": 6.842277657836021e-48
+   },
+   "gemma4:12b": {
+    "b01": 160,
+    "b10": 0,
+    "p": 1.3684555315672042e-48,
+    "p_holm": 6.842277657836021e-48
+   }
+  },
+  "birads_omitida": {
+   "qwen2.5:1.5b-instruct": {
+    "b01": 169,
+    "b10": 3,
+    "p": 2.833862262037115e-46,
+    "p_holm": 1.4169311310185576e-45
+   },
+   "qwen2.5:3b": {
+    "b01": 14,
+    "b10": 0,
+    "p": 0.0001220703125,
+    "p_holm": 0.0003662109375
+   },
+   "phi3.5": {
+    "b01": 43,
+    "b10": 0,
+    "p": 2.2737367544323206e-13,
+    "p_holm": 9.094947017729282e-13
+   },
+   "qwen3.5:4b": {
+    "b01": 9,
+    "b10": 0,
+    "p": 0.00390625,
+    "p_holm": 0.0078125
+   },
+   "gemma4:12b": {
+    "b01": 0,
+    "b10": 0,
+    "p": 1.0,
+    "p_holm": 1.0
+   }
+  },
+  "birads_incompatible": {
+   "qwen2.5:1.5b-instruct": {
+    "b01": 66,
+    "b10": 44,
+    "p": 0.04476209415697353,
+    "p_holm": 0.04476209415697353
+   },
+   "qwen2.5:3b": {
+    "b01": 13,
+    "b10": 46,
+    "p": 1.9167786796225883e-05,
+    "p_holm": 3.8335573592451766e-05
+   },
+   "phi3.5": {
+    "b01": 2,
+    "b10": 53,
+    "p": 8.554268404736831e-14,
+    "p_holm": 4.2771342023684156e-13
+   },
+   "qwen3.5:4b": {
+    "b01": 0,
+    "b10": 29,
+    "p": 3.725290298461914e-09,
+    "p_holm": 1.4901161193847656e-08
+   },
+   "gemma4:12b": {
+    "b01": 0,
+    "b10": 28,
+    "p": 7.450580596923828e-09,
+    "p_holm": 2.2351741790771484e-08
+   }
+  },
+  "birads_coherente": {
+   "qwen2.5:1.5b-instruct": {
+    "b01": 1,
+    "b10": 294,
+    "p": 9.299786660660013e-87,
+    "p_holm": 4.6498933303300066e-86
+   },
+   "qwen2.5:3b": {
+    "b01": 0,
+    "b10": 148,
+    "p": 5.605193857299268e-45,
+    "p_holm": 2.2420775429197073e-44
+   },
+   "phi3.5": {
+    "b01": 0,
+    "b10": 145,
+    "p": 4.484155085839415e-44,
+    "p_holm": 1.3452465257518244e-43
+   },
+   "qwen3.5:4b": {
+    "b01": 0,
+    "b10": 9,
+    "p": 0.00390625,
+    "p_holm": 0.0078125
+   },
+   "gemma4:12b": {
+    "b01": 0,
+    "b10": 0,
+    "p": 1.0,
+    "p_holm": 1.0
+   }
+  },
+  "tipo_erroneo": {
+   "qwen2.5:1.5b-instruct": {
+    "b01": 3,
+    "b10": 0,
+    "p": 0.25,
+    "p_holm": 0.5
+   },
+   "qwen2.5:3b": {
+    "b01": 15,
+    "b10": 0,
+    "p": 6.103515625e-05,
+    "p_holm": 0.000244140625
+   },
+   "phi3.5": {
+    "b01": 36,
+    "b10": 0,
+    "p": 2.9103830456733704e-11,
+    "p_holm": 1.4551915228366852e-10
+   },
+   "qwen3.5:4b": {
+    "b01": 9,
+    "b10": 1,
+    "p": 0.021484375,
+    "p_holm": 0.064453125
+   },
+   "gemma4:12b": {
+    "b01": 0,
+    "b10": 0,
+    "p": 1.0,
+    "p_holm": 1.0
+   }
+  },
+  "sin_respaldo": {
+   "qwen2.5:1.5b-instruct": {
+    "b01": 177,
+    "b10": 5,
+    "p": 5.284278197915279e-46,
+    "p_holm": 1.5852834593745837e-45
+   },
+   "qwen2.5:3b": {
+    "b01": 272,
+    "b10": 4,
+    "p": 3.95440566055421e-75,
+    "p_holm": 1.581762264221684e-74
+   },
+   "phi3.5": {
+    "b01": 317,
+    "b10": 0,
+    "p": 7.490682167507517e-96,
+    "p_holm": 3.7453410837537587e-95
+   },
+   "qwen3.5:4b": {
+    "b01": 35,
+    "b10": 10,
+    "p": 0.00024708778460080794,
+    "p_holm": 0.0004941755692016159
+   },
+   "gemma4:12b": {
+    "b01": 0,
+    "b10": 0,
+    "p": 1.0,
+    "p_holm": 1.0
+   }
+  },
+  "sin_respaldo_sin_tipo": {
+   "qwen2.5:1.5b-instruct": {
+    "b01": 168,
+    "b10": 4,
+    "p": 1.2046429184106553e-44,
+    "p_holm": 3.613928755231966e-44
+   },
+   "qwen2.5:3b": {
+    "b01": 269,
+    "b10": 4,
+    "p": 3.0279732899107433e-74,
+    "p_holm": 1.2111893159642973e-73
+   },
+   "phi3.5": {
+    "b01": 288,
+    "b10": 1,
+    "p": 5.831217581819252e-85,
+    "p_holm": 2.9156087909096258e-84
+   },
+   "qwen3.5:4b": {
+    "b01": 13,
+    "b10": 4,
+    "p": 0.049041748046875,
+    "p_holm": 0.09808349609375
+   },
+   "gemma4:12b": {
+    "b01": 0,
+    "b10": 0,
+    "p": 1.0,
+    "p_holm": 1.0
+   }
+  }
+ },
+ "entre_modelos_evidencia": {
+  "birads_transmitida": {
+   "cochran": {
+    "Q": 40.0,
+    "gl": 4,
+    "p": 4.3284226071209714e-08
+   },
+   "frente_a_referencia": {
+    "gemma4:12b": {
+     "b01": 0,
+     "b10": 10,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    },
+    "phi3.5": {
+     "b01": 0,
+     "b10": 10,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    },
+    "qwen2.5:3b": {
+     "b01": 0,
+     "b10": 10,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    },
+    "qwen3.5:4b": {
+     "b01": 0,
+     "b10": 10,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    }
+   }
+  },
+  "copia_region": {
+   "cochran": {
+    "Q": 8.0,
+    "gl": 4,
+    "p": 0.0915781944436709
+   },
+   "frente_a_referencia": {
+    "gemma4:12b": {
+     "b01": 0,
+     "b10": 2,
+     "p": 0.5,
+     "p_holm": 1.0
+    },
+    "phi3.5": {
+     "b01": 4,
+     "b10": 2,
+     "p": 0.6875,
+     "p_holm": 1.0
+    },
+    "qwen2.5:3b": {
+     "b01": 1,
+     "b10": 2,
+     "p": 1.0,
+     "p_holm": 1.0
+    },
+    "qwen3.5:4b": {
+     "b01": 0,
+     "b10": 2,
+     "p": 0.5,
+     "p_holm": 1.0
+    }
+   }
+  },
+  "tipo_erroneo": {
+   "cochran": {
+    "Q": 4.0,
+    "gl": 4,
+    "p": 0.4060058497098381
+   },
+   "frente_a_referencia": {
+    "gemma4:12b": {
+     "b01": 0,
+     "b10": 0,
+     "p": 1.0,
+     "p_holm": 1.0
+    },
+    "phi3.5": {
+     "b01": 0,
+     "b10": 0,
+     "p": 1.0,
+     "p_holm": 1.0
+    },
+    "qwen2.5:3b": {
+     "b01": 0,
+     "b10": 0,
+     "p": 1.0,
+     "p_holm": 1.0
+    },
+    "qwen3.5:4b": {
+     "b01": 0,
+     "b10": 1,
+     "p": 1.0,
+     "p_holm": 1.0
+    }
+   }
+  },
+  "sin_respaldo": {
+   "cochran": {
+    "Q": 152.301,
+    "gl": 4,
+    "p": 6.541649059431034e-32
+   },
+   "frente_a_referencia": {
+    "gemma4:12b": {
+     "b01": 9,
+     "b10": 0,
+     "p": 0.00390625,
+     "p_holm": 0.01171875
+    },
+    "phi3.5": {
+     "b01": 9,
+     "b10": 5,
+     "p": 0.4239501953125,
+     "p_holm": 0.847900390625
+    },
+    "qwen2.5:3b": {
+     "b01": 7,
+     "b10": 61,
+     "p": 7.387402755493211e-12,
+     "p_holm": 2.9549611021972844e-11
+    },
+    "qwen3.5:4b": {
+     "b01": 9,
+     "b10": 12,
+     "p": 0.6636238098144531,
+     "p_holm": 0.847900390625
+    }
+   }
+  },
+  "sin_respaldo_sin_tipo": {
+   "cochran": {
+    "Q": 175.377,
+    "gl": 4,
+    "p": 7.333587766905242e-37
+   },
+   "frente_a_referencia": {
+    "gemma4:12b": {
+     "b01": 8,
+     "b10": 0,
+     "p": 0.0078125,
+     "p_holm": 0.0234375
+    },
+    "phi3.5": {
+     "b01": 8,
+     "b10": 5,
+     "p": 0.5810546875,
+     "p_holm": 0.775390625
+    },
+    "qwen2.5:3b": {
+     "b01": 6,
+     "b10": 60,
+     "p": 2.72580319860688e-12,
+     "p_holm": 1.090321279442752e-11
+    },
+    "qwen3.5:4b": {
+     "b01": 8,
+     "b10": 4,
+     "p": 0.3876953125,
+     "p_holm": 0.775390625
+    }
+   }
+  },
+  "birads_omitida": {
+   "cochran": {
+    "Q": 40.0,
+    "gl": 4,
+    "p": 4.3284226071209714e-08
+   },
+   "frente_a_referencia": {
+    "gemma4:12b": {
+     "b01": 10,
+     "b10": 0,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    },
+    "phi3.5": {
+     "b01": 10,
+     "b10": 0,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    },
+    "qwen2.5:3b": {
+     "b01": 10,
+     "b10": 0,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    },
+    "qwen3.5:4b": {
+     "b01": 10,
+     "b10": 0,
+     "p": 0.001953125,
+     "p_holm": 0.0078125
+    }
+   }
+  }
+ }
+}

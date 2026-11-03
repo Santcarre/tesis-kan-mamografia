@@ -1,0 +1,105 @@
+{
+  "equipo": {
+    "fecha": "2026-10-20T20:11:42",
+    "sistema": "Windows-10-10.0.26340-SP0",
+    "procesador": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "nucleos_logicos": 12,
+    "python": "3.10.11",
+    "numpy": "2.2.6",
+    "ram_total_mb": 32695,
+    "hilos_pedidos_al_entorno": "1"
+  },
+  "modo": "un_nucleo",
+  "bloque_a": {
+    "u0_un_producto_punto_numpy": {
+      "mediana_us": 1.1,
+      "p95_us": 1.1,
+      "n": 2000
+    },
+    "proyeccion_completa_a_64_variables": {
+      "mediana_us": 10.6,
+      "p95_us": 20.6,
+      "n": 2000
+    },
+    "formula_g_un_caso": {
+      "mediana_us": 32.1,
+      "p95_us": 80.1,
+      "n": 2000
+    },
+    "decision_completa_desde_512_numpy": {
+      "mediana_us": 33.5,
+      "p95_us": 66.6,
+      "n": 2000
+    },
+    "decision_completa_desde_512_python_puro": {
+      "mediana_us": 64.8,
+      "p95_us": 160.3,
+      "n": 400
+    },
+    "lote_1012_con_numpy_total": {
+      "mediana_us": 227.7,
+      "p95_us": 401.9,
+      "n": 50
+    },
+    "lote_1012_con_numpy_por_caso_us": 0.225,
+    "archivos_necesarios_bytes": {
+      "formula_canonica_json": 1334,
+      "vector_u0_512_coeficientes_float64": 4104,
+      "reductor_completo_npz": 142816,
+      "checkpoint_resnet18_robusto": 44786507,
+      "caracteres_de_fben_mas_fmal_en_el_json": 742
+    },
+    "comprobacion": {
+      "diferencia_maxima_u0_atajo_vs_completo": 1.3322676295501878e-15,
+      "veredictos_iguales_en_1012": true,
+      "casos": 1012
+    },
+    "memoria_mb": {
+      "proceso_con_numpy_antes": 29.0,
+      "despues": 30.4
+    }
+  },
+  "bloque_b": {
+    "torch": "2.14.0.dev20260810+cu130",
+    "tiempo_importar_torch_s": 4.78,
+    "tiempo_cargar_checkpoint_s": 0.14,
+    "memoria_mb": {
+      "antes_de_importar_torch_bloque_a": 30.4,
+      "despues_de_importar": 570.8,
+      "despues_de_cargar_modelo": 659.0,
+      "despues_de_inferir": 683.4
+    },
+    "por_hilos": {
+      "1": {
+        "extractor_resnet18_una_imagen": {
+          "mediana_us": 64802.05,
+          "p95_us": 99676.3,
+          "n": 100
+        },
+        "extractor_resnet18_lote_de_8": {
+          "mediana_us": 491579.5,
+          "p95_us": 599887.7,
+          "n": 33
+        },
+        "capa_final_512_a_2_de_la_red": {
+          "mediana_us": 7.0,
+          "p95_us": 14.4,
+          "n": 2000
+        },
+        "red_completa_una_imagen": {
+          "mediana_us": 67255.45,
+          "p95_us": 83121.3,
+          "n": 100
+        }
+      }
+    }
+  },
+  "bloque_c": {
+    "reducir_3000x4000_a_224x224": {
+      "mediana_us": 70712.45,
+      "p95_us": 96012.9,
+      "n": 100
+    },
+    "nota": "No incluye leer ni decodificar el archivo DICOM."
+  }
+}

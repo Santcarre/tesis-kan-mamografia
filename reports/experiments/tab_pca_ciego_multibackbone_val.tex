@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Colapso del PCA ciego en alta dimensión: fórmula simbólica destilada sobre cada familia convolucional (selección de $D'$ en validación).}
+\label{tab:pca_ciego_multibackbone}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Arquitectura} & \textbf{Dim. $D$} & \textbf{AUC Fórm. D} & \textbf{N. Vars} & \textbf{Variables Activas} & \textbf{Tiempo (s)} \\ 
+\midrule
+resnet18 & 512 & 0.7301 & 2 & {x0, x1} & 6.9 \\ 
+densenet121 & 1024 & 0.5787 & 5 & {x0, x1, x2, x3, x6} & 5.62 \\ 
+efficientnet_b0 & 1280 & 0.5684 & 2 & {x1, x5} & 5.54 \\ 
+resnet50 & 2048 & 0.5881 & 5 & {x0, x1, x3, x5, x7} & 5.63 \\ 
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,41 @@
+/* Prometeo · tokens de diseño.
+   Papel frío, tinta azul profunda y un panel oscuro tipo negatoscopio solo para las imágenes.
+   Significado del color (nunca solo por color: siempre va con texto):
+     teal  = lado benigno de u0      baya = lado sospechoso      ámbar = umbral / zona de duda */
+:root {
+  color-scheme: light;
+
+  --papel: #edf0f1;
+  --papel-2: #e1e7e9;
+  --hoja: #f8faf9;
+  --linea: #cfd8db;
+  --linea-suave: #dde4e6;
+  --cuadricula: rgba(18, 34, 43, .06);
+
+  --tinta: #12222b;
+  --tinta-2: #3b4e58;
+  --tinta-3: #667881;
+
+  --benigno: #14707a;
+  --benigno-oscuro: #0c545c;
+  --benigno-suave: #d3eaec;
+  --sospechoso: #a8204e;
+  --sospechoso-oscuro: #7f163a;
+  --sospechoso-suave: #f3d8e1;
+  --umbral: #b06d00;
+  --umbral-suave: #f6e6c6;
+
+  --luz: #0c1316;
+  --luz-2: #152026;
+  --luz-linea: #25343c;
+  --luz-texto: #d9e3e7;
+  --luz-texto-2: #94a7af;
+
+  --fuente-titulo: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", "P052", serif;
+  --fuente-texto: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  --radio: 6px;
+  --radio-g: 10px;
+  --sombra: 0 1px 0 rgba(18, 34, 43, .06), 0 8px 24px -12px rgba(18, 34, 43, .25);
+  --ancho-max: 1180px;
+}

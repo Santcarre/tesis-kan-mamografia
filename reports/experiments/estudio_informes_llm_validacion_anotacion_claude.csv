@@ -1,0 +1,41 @@
+﻿id,region_reportada (CSE/CSI/CIE/CII/RA/ninguna/varias),birads_reportada (0-6 o vacio),menciona_masa (0/1),menciona_calc (0/1),sin_respaldo (0/1),cuales_sin_respaldo,observaciones
+1,ninguna,4,0,0,1,"margen (contornos bien definidos, regulares); otras (ecogenicidad); niega calcificaciones y distorsión",Clasificación benigna pero asigna BI-RADS 4; 'ecogenicidad' es un término de ecografía
+2,ninguna,4,0,0,1,niega hallazgos (no se observaron otros hallazgos anormales),Escribe 4a; dice que podría ser benigna con clasificación sospechosa
+3,ninguna,4,0,0,0,,
+4,ninguna,4,1,0,1,"tipo (nódulo); forma irregular; margen (bordes desiguales); otras (mayor densidad); niega displasia, poliposis, etc.",Proyección 'de tipo Convexidad'; recomendación repetida 6 veces; control a 6 meses con BI-RADS 4
+5,ninguna,4,0,0,1,otras (morfología y densidad consistentes con proceso patológico) - dudoso,Afirmación vaga sobre morfología; 'mamotomografía'
+6,ninguna,3,0,0,0,,Dice tomografía computarizada en vez de mamografía; BI-RADS 3 con clasificación sospechosa y definición errónea de BI-RADS 3
+7,ninguna,4,0,0,0,,
+8,ninguna,2,0,0,0,,
+9,CII,3,0,0,0,,Llama 'umbral base' a u0
+10,CIE,3,0,0,0,,Llama 'umbral base' a u0
+11,ninguna,4,0,0,1,margen (irregularidades en los bordes); otras (variación en densidad); asimetría; niega calcificaciones y adenopatías,
+12,RA,3,0,0,1,ubicación inventada (posición 100-150),Presenta el área del mapa como tamaño de la lesión; 'proyección completa (CC)'
+13,CSE,5,0,0,0,,Dice tomografía computarizada; dice 'zona superior externa de la mama' pese a la aclaración; recomienda TC o RM; repite la recomendación
+14,CII,3,0,0,0,,Llama 'umbral base' a u0; recomienda ecografía con BI-RADS 3
+15,CII,4,0,0,0,,Técnica: 'tomografía computarizada (CC)'
+16,CIE,4,0,0,1,"tamaño (convierte 1870 píxeles en 8,3 mm)",'Mamografía magnética'
+17,ninguna,3,0,0,0,,
+18,CSE,3,0,0,0,,Dice tomografía computarizada; glosa anatómica ('más alejada del núcleo'); compara p con el umbral de g
+19,CII,3,0,0,0,,
+20,ninguna,,0,0,1,"forma irregular; otras (consistencia densa); tamaño (1,5 cm; a 2,5 cm del núcleo); ubicación inventada (núcleo mamario)",Dice tomografía computarizada; no escribe categoría
+21,RA,4,0,0,0,,
+22,CSE,3,0,0,0,,Presenta el área del mapa como tamaño de la lesión
+23,CII,2,0,0,0,,Llama a p 'probabilidad de benignidad' (es al revés)
+24,CIE,4,0,0,0,,
+25,CSE,3,0,0,0,,Llama 'umbral base' a u0; recomienda ecografía
+26,ninguna,,0,0,1,lateralidad contraria (pecho derecho en mama izquierda); piel; niega deformidad y lesiones,Repetitivo y truncado; no escribe categoría
+27,CIE,2,0,0,0,,Presenta el área del mapa como tamaño de la lesión; sugiere biopsia con BI-RADS 2
+28,ninguna,4,0,0,1,margen (irregularidades en los contornos); otras (aumento de densidad); asimetría; niega calcificaciones,
+29,CII,5,0,0,0,,
+30,CSE,4,0,0,0,,
+31,ninguna,4,0,0,1,forma irregular; margen (bordes desiguales); otras (textura); ubicación inventada (cuadrante superior derecho); niega displasia,Escribe 4a; repite frases
+32,ninguna,4,1,0,1,"tipo (nódulo); forma irregular; tamaño 1,2 cm; margen (bordes definidos); otras (densidad, heterogeneidad)","Inventa parámetros técnicos (1.000 mAs, 0,25 s); control a 6 meses con BI-RADS 4"
+33,CIE,4,0,0,0,,Técnica: 'tomografía computarizada (CC)'; 'mamografía de tórax'
+34,ninguna,3,0,0,0,,
+35,ninguna,4,0,0,0,,"Escribe 4C con su rango de probabilidad para p = 0,537"
+36,ninguna,,0,0,1,densidad mamaria; margen (línea de contorno irregular); ubicación inventada (parte posterior),Repetitivo y truncado; no escribe categoría
+37,ninguna,4,0,0,1,forma y patrón de densidad homogéneos,Clasificación benigna pero BI-RADS 4; 'Mammotome Lateral'
+38,ninguna,3,0,0,0,,
+39,CSI,2,0,0,0,,Sugiere considerar biopsia con BI-RADS 2
+40,CSE,4,0,0,0,,Dice que la clasificación se ajustó para parecerse al radiólogo (confunde con la categoría); recomienda TC o RM

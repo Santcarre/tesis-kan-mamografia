@@ -1,0 +1,3461 @@
+{
+  "date": "2026-09-26",
+  "seed": 42,
+  "model": "ResNet-18 Robusto (resnet18_robust_best.pt)",
+  "nota_alcance": "El logit de la CNN es exactamente lineal en el embedding GAP de 512 dimensiones, por lo que sus valores de Shapley tienen forma cerrada y sirven como verdad de referencia. La comparacion con la formula simbolica se hace sobre el ROL de cada variable canonica y no sobre magnitudes, porque la formula vive en el espacio D'=48 del modelo 1c_base (base 1) y la estacion en el espacio S-PCA de 12 componentes del backbone robusto (base 0): son espacios distintos.",
+  "logit": {
+    "coef_norm": 0.5640010195607207,
+    "bias_diff": 0.0015280060470104218,
+    "w0_norm": 0.4884872646460419,
+    "w1_norm": 0.5086110522517046
+  },
+  "datos": {
+    "n_train": 4278,
+    "n_test": 1012,
+    "dim": 512
+  },
+  "spca": {
+    "n_components": 12,
+    "varianza_explicada": 0.496347359893924
+  },
+  "puente_canonico": {
+    "beta_12d": [
+      -0.17057616232532694,
+      0.06663240411533515,
+      0.13533425748074154,
+      -0.03673537495508789,
+      -0.029121138392220795,
+      0.029197748874001755,
+      -0.010192618208915628,
+      0.07282334080232765,
+      0.0038302843149241555,
+      -0.05278031399707194,
+      0.01583944539168376,
+      0.006645504357815353
+    ],
+    "beta_12d_con_pesos": [
+      -0.11175928390489802,
+      0.03923574911983025,
+      0.0746656105425579,
+      -0.025531772475112412,
+      -0.014591434181587232,
+      0.01107114671560204,
+      -0.007053473472203182,
+      0.04571569938289202,
+      -0.005736509155650543,
+      -0.026966734416111283,
+      0.004921258833909507,
+      0.008298268224207326
+    ],
+    "r2_proyeccion_ortogonal": 0.9000785920358386,
+    "r2_mínimos_cuadrados": 0.9312708676158263,
+    "correlacion_s_proyectado": 0.950182543190296,
+    "auc_logit_completo": 0.9415542388159064,
+    "auc_logit_reconstruido": 0.9078268868604946,
+    "orden_importancia_canonica": [
+      0,
+      2,
+      7,
+      1,
+      9,
+      3,
+      5,
+      4,
+      10,
+      6,
+      11,
+      8
+    ],
+    "orden_importancia_canonica_con_pesos": [
+      0,
+      2,
+      7,
+      1,
+      9,
+      3,
+      4,
+      5,
+      11,
+      6,
+      8,
+      10
+    ]
+  },
+  "validacion": {
+    "dimension": 512,
+    "lime": {
+      "r2_surrogate": 0.9998597714600554,
+      "segundos": 0.075,
+      "n_samples": 3000
+    },
+    "kernel_shap": {
+      "r2_regresion": 0.7825445890246948,
+      "segundos": 0.091,
+      "n_coalitions": 600
+    },
+    "nota": "LIME estima el gradiente local, que en una funcion lineal es el vector de coeficientes; KernelSHAP estima los valores de Shapley. Se comparan ambos contra la verdad analitica en el bloque D."
+  },
+  "escalado": {
+    "presupuesto_lime": 3000,
+    "presupuesto_kernel_shap": 600,
+    "curva": [
+      {
+        "dimension": 12,
+        "lime_rho_shap": 1.0000000000000002,
+        "lime_r2": 0.9999894236320739,
+        "kernel_shap_rho": 0.9370629370629372,
+        "kernel_shap_r2": 0.9667529397286289
+      },
+      {
+        "dimension": 24,
+        "lime_rho_shap": 1.0,
+        "lime_r2": 0.9999868688537455,
+        "kernel_shap_rho": 0.8156521739130436,
+        "kernel_shap_r2": 0.4739794525950187
+      },
+      {
+        "dimension": 32,
+        "lime_rho_shap": 1.0,
+        "lime_r2": 0.9999889495831197,
+        "kernel_shap_rho": 0.594208211143695,
+        "kernel_shap_r2": 0.798001586244557
+      },
+      {
+        "dimension": 48,
+        "lime_rho_shap": 1.0000000000000002,
+        "lime_r2": 0.9999918551196348,
+        "kernel_shap_rho": 0.4123968736430743,
+        "kernel_shap_r2": -9.749513172737059
+      },
+      {
+        "dimension": 64,
+        "lime_rho_shap": 0.9999999999999998,
+        "lime_r2": 0.9999892793703195,
+        "kernel_shap_rho": 0.22326007326007322,
+        "kernel_shap_r2": -9.031935446065667
+      },
+      {
+        "dimension": 128,
+        "lime_rho_shap": 0.999982832814503,
+        "lime_r2": 0.9999905689046761,
+        "kernel_shap_rho": 0.1363188976377953,
+        "kernel_shap_r2": -47.14642704527598
+      },
+      {
+        "dimension": 256,
+        "lime_rho_shap": 0.9999864099336232,
+        "lime_r2": 0.9999853091683324,
+        "kernel_shap_rho": 0.3239807450217441,
+        "kernel_shap_r2": -0.1042289693712386
+      },
+      {
+        "dimension": 512,
+        "lime_rho_shap": 0.9999893605303213,
+        "lime_r2": 0.9999880649077323,
+        "kernel_shap_rho": 0.08132320805168422,
+        "kernel_shap_r2": 0.6060696475852116
+      }
+    ],
+    "nota": "Con presupuesto de muestreo fijo, LIME mantiene el acuerdo porque ajusta un surrogate local de d+1 parametros. KernelSHAP muestrea coalitions de un conjunto de tamano 2^d: con tamano de coalicion uniforme en 1..d-1, al aumentar d la probabilidad de que aparezca una coalicion pequena (las unica con peso apreciable en el kernel de Shapley, w(s)=(d-1)/(C(d,s) s (d-s))) cae, de modo que la regresion ponderada se apoya en pocas Effectively informative. La metrica primaria es la correlacion de rangos con la verdad analitica; el R2 de la regresion de KernelSHAP se reporta sin ponderar y no debe leerse como calidad del ajuste."
+  },
+  "coherencia_caso": {
+    "n_casos": 200,
+    "espacio": "512-dimensional GAP",
+    "lime_vs_shap_analitico": {
+      "n_cases": 200,
+      "spearman": {
+        "mean": 0.9997700931302285,
+        "median": 0.9998845304614276,
+        "min": 0.9933598980327532,
+        "max": 0.9999437628031266,
+        "n": 200
+      },
+      "pearson": {
+        "mean": 0.9999574949909322,
+        "median": 0.9999814674751863,
+        "min": 0.9983266290706222,
+        "max": 0.999990340121078,
+        "n": 200
+      },
+      "sign_agreement": {
+        "mean": 0.99072265625,
+        "median": 0.9921875,
+        "min": 0.951171875,
+        "max": 0.998046875,
+        "n": 200
+      },
+      "rel_l2_error": {
+        "mean": 0.009189894784493452,
+        "median": 0.007668298928923709,
+        "min": 0.005453693911989383,
+        "max": 0.06369813863931911,
+        "n": 200
+      },
+      "top1_agreement_rate": 1.0,
+      "per_case": [
+        {
+          "spearman": 0.9998697335519163,
+          "pearson": 0.9999739616816781,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008904011035569112,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998364740332567,
+          "pearson": 0.999966205905778,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009851673681871528,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999263283780226,
+          "pearson": 0.9999849187779114,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0067518007015946995,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998885090866435,
+          "pearson": 0.9999803834112,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00742045630936753,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9995712919570616,
+          "pearson": 0.9999554663871055,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.010995913319481732,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998949464128357,
+          "pearson": 0.999979158545516,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008441186667637378,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998709852542315,
+          "pearson": 0.9999734995805983,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008640204814372943,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998527461633536,
+          "pearson": 0.9999709848539341,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009435605700245727,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999163147595015,
+          "pearson": 0.9999846650479634,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006899728642172324,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9994380750678065,
+          "pearson": 0.9999198966020723,
+          "sign_agreement": 0.982421875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.01440452485978053,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997519841269841,
+          "pearson": 0.9999427006231469,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.01275897223877284,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997404505842231,
+          "pearson": 0.9999695872939914,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008736804161284875,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.99993401740653,
+          "pearson": 0.9999878234827492,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006783021722937474,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999266860072555,
+          "pearson": 0.9999827370278032,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007380663902213678,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998928006374384,
+          "pearson": 0.9999763123790941,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008711386056880979,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999307987434339,
+          "pearson": 0.9999861313031946,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006967282305836322,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999138113548712,
+          "pearson": 0.9999826183339411,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0072322320919938525,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999035295144253,
+          "pearson": 0.9999839043277323,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007382889784468789,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998952146347604,
+          "pearson": 0.9999801311831967,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0076853348523280044,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998917277497397,
+          "pearson": 0.9999776181177447,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008743126478934606,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998745615465605,
+          "pearson": 0.999983425955566,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007841066711854569,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999185499422071,
+          "pearson": 0.9999841543362415,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0072368489650194425,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999087151383024,
+          "pearson": 0.999984345065842,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007765217668407272,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998953040420686,
+          "pearson": 0.9999822999441002,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007684517780164318,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998883302720271,
+          "pearson": 0.999976556254399,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008403363312834583,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998852010162392,
+          "pearson": 0.9999860064315484,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006784122135106307,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9995589537485265,
+          "pearson": 0.9999508597953456,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.011608792911883544,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999155995010357,
+          "pearson": 0.9999838223351399,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007290978917861956,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998961087078426,
+          "pearson": 0.9999833320064551,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007444104045672352,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999852477941429,
+          "pearson": 0.9999776716194113,
+          "sign_agreement": 0.982421875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008105386021535573,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999111291356244,
+          "pearson": 0.9999777984615235,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007655095964947915,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9996982503347409,
+          "pearson": 0.9999551675073046,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.010901483466919479,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998379045501883,
+          "pearson": 0.9999591087422349,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.010129863469556027,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998860950893215,
+          "pearson": 0.9999838367902363,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007236555877023022,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999236461587759,
+          "pearson": 0.9999840022254259,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007158680587786418,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998874361989448,
+          "pearson": 0.9999849172422076,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007089191227022873,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998977180393908,
+          "pearson": 0.9999820219409996,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008150737014601067,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998263710074272,
+          "pearson": 0.999981433047079,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007197048558596165,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9996142074650095,
+          "pearson": 0.9999580445675029,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.011087030118285829,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998194866446939,
+          "pearson": 0.9999783328182261,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007340513298263155,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998061649557685,
+          "pearson": 0.9999626194871217,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009579289765597486,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999763070633204,
+          "pearson": 0.9999673699114674,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009376619020719294,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999164041668097,
+          "pearson": 0.9999852489169914,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006971285367761664,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998574847506895,
+          "pearson": 0.9999617223916163,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.010309501076319111,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9994652548895069,
+          "pearson": 0.9999267434423817,
+          "sign_agreement": 0.982421875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.013275357314886969,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998107247284879,
+          "pearson": 0.9999536823259707,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.01127931420729425,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998257451562697,
+          "pearson": 0.9999684176530328,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009395570916613234,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997435798400109,
+          "pearson": 0.9999483848606169,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.011438365848885527,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998897607889587,
+          "pearson": 0.9999823339794555,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007432939848970244,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999907374028679,
+          "pearson": 0.9999771250895167,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008409419605348337,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999323186676737,
+          "pearson": 0.9999867728489868,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006686219575564517,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998212747908585,
+          "pearson": 0.9999600085788992,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.010162237346469958,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999183711275906,
+          "pearson": 0.9999836373096991,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0071819756363246876,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997784486902187,
+          "pearson": 0.9999703516699135,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008990461534639511,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998987015197812,
+          "pearson": 0.9999830712294364,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0072836641487929,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998641902988064,
+          "pearson": 0.9999832842528606,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007228299803858273,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999122020233231,
+          "pearson": 0.9999823494213174,
+          "sign_agreement": 0.984375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007957113084075044,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999275800803379,
+          "pearson": 0.9999846096180723,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007224732213206544,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998235099735641,
+          "pearson": 0.9999746371127942,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008465144634308855,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999035295144253,
+          "pearson": 0.9999793691227677,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007791182874664164,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999142583914123,
+          "pearson": 0.9999818996180267,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007599275295743866,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9987066338792185,
+          "pearson": 0.9997974921497461,
+          "sign_agreement": 0.9765625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.02197798821149614,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998578423799224,
+          "pearson": 0.9999734020573244,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008596681013750785,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998766179146497,
+          "pearson": 0.9999863312465637,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006580625704967707,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999873220436937,
+          "pearson": 0.9999774517392408,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008022675695016242,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999408123619551,
+          "pearson": 0.9999859293021699,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006874524463447041,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999925255490324,
+          "pearson": 0.9999844134743665,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006896627275498202,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999317822238244,
+          "pearson": 0.9999824665133557,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007721137411361688,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999235567514677,
+          "pearson": 0.9999822297125287,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00759111410150911,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998733992515535,
+          "pearson": 0.9999839398991172,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0063228036194764295,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999074634359872,
+          "pearson": 0.9999827620855942,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007699171605153329,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999182817202824,
+          "pearson": 0.9999817196872179,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007835336394479132,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998877044208695,
+          "pearson": 0.9999788716214908,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007693423534868272,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9996879684942951,
+          "pearson": 0.9999708207012333,
+          "sign_agreement": 0.984375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009450634727537568,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997541299023815,
+          "pearson": 0.9999803748513034,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008097238919917054,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999207851249128,
+          "pearson": 0.9999850088911686,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007263339189209241,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998714322907726,
+          "pearson": 0.9999786928364639,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008050573971813916,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999248084537828,
+          "pearson": 0.9999869349437456,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006830994521058315,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997216750494959,
+          "pearson": 0.999950706618299,
+          "sign_agreement": 0.982421875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.011238477790512335,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998506003879561,
+          "pearson": 0.9999760370858639,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00876925748520955,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998394244744281,
+          "pearson": 0.9999814727217124,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007449298123779712,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998765285073414,
+          "pearson": 0.9999857871436435,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0063793629198676425,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998711640688479,
+          "pearson": 0.9999794292699112,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007913190791712495,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998897607889587,
+          "pearson": 0.9999813940401565,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007081697893017537,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999019201828773,
+          "pearson": 0.9999853527577194,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00701726935317488,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999898612112473,
+          "pearson": 0.9999790635779995,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008247561036188183,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998646373353475,
+          "pearson": 0.9999865401576038,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006368093063991398,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998173408692965,
+          "pearson": 0.9999799803578652,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007989499137468686,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999015625536444,
+          "pearson": 0.9999837897590597,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007274985131830017,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999384877719413,
+          "pearson": 0.9999884611021582,
+          "sign_agreement": 0.998046875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00638816828244654,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999241826026253,
+          "pearson": 0.999989753791723,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0063171714141873475,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999229309003101,
+          "pearson": 0.9999826811899155,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007461938486405049,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999231991222348,
+          "pearson": 0.9999866957176552,
+          "sign_agreement": 0.998046875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00692380604432523,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998811776873691,
+          "pearson": 0.9999780629533784,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007321780619978053,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999071952140626,
+          "pearson": 0.9999815485338129,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007707502540867933,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999074634359872,
+          "pearson": 0.9999810544408041,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0073776940511856275,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998543554949016,
+          "pearson": 0.9999820256487356,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007247720077922161,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998419278790583,
+          "pearson": 0.9999794290792329,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007465015880839227,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998156421304403,
+          "pearson": 0.9999780460435174,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008058746323728572,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9994995872958652,
+          "pearson": 0.9998971096780239,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.01674177426819252,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9995881899383161,
+          "pearson": 0.9999304231212829,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.013763020023747062,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997883729014316,
+          "pearson": 0.9999689398549635,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008759623074394714,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9995494765738547,
+          "pearson": 0.9999204367291832,
+          "sign_agreement": 0.982421875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.014389761425601244,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9990275167084378,
+          "pearson": 0.9997763960557022,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.02281632865722639,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9984909834517801,
+          "pearson": 0.9997547114480061,
+          "sign_agreement": 0.982421875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.025206973501774414,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998259239708861,
+          "pearson": 0.9999723627849985,
+          "sign_agreement": 0.984375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008553541157861362,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997505536100525,
+          "pearson": 0.9999562579030754,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.010633336112453472,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998913701205068,
+          "pearson": 0.9999814997426193,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007144352517830033,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999183711275906,
+          "pearson": 0.9999860857762735,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0073374454201809375,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999884306943157,
+          "pearson": 0.9999876956382213,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.005967025092455943,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998432689886817,
+          "pearson": 0.999981504497084,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007112119465790564,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998885090866435,
+          "pearson": 0.9999886845958009,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006177811076426983,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998940523397535,
+          "pearson": 0.9999793339289585,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007448438896982547,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999930441114201,
+          "pearson": 0.9999833651989649,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007368304941176658,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999016519609526,
+          "pearson": 0.999984259155723,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006728159584794667,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998647267426557,
+          "pearson": 0.9999829038203667,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007217814795163861,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9996370957359151,
+          "pearson": 0.9999158690000486,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.015270932844177439,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999241826026253,
+          "pearson": 0.9999853654484632,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006798088423043135,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9995907827502546,
+          "pearson": 0.9999556051248527,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.011505305705808096,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998425537302159,
+          "pearson": 0.9999833039855851,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007278514040833169,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999813943391584,
+          "pearson": 0.9999729060489997,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008704825651350875,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998829658335336,
+          "pearson": 0.9999789255114162,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008268417081094596,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998395138817363,
+          "pearson": 0.9999696922510002,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009122870430156714,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998313778166878,
+          "pearson": 0.9999830369642312,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006714194629979546,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999119338013984,
+          "pearson": 0.999977440053077,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008527352195594374,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999233779368513,
+          "pearson": 0.9999828109458486,
+          "sign_agreement": 0.998046875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007209420208713279,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998796577631293,
+          "pearson": 0.9999860664470851,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006513656118473332,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998739356954028,
+          "pearson": 0.999984554194405,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006963433584264386,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998855586454721,
+          "pearson": 0.9999828800931366,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007638684643639547,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999158677229604,
+          "pearson": 0.9999862479214001,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00660341183437498,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999116655794738,
+          "pearson": 0.9999808222141787,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008260498164689642,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999295470411188,
+          "pearson": 0.999984713050827,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007384219117554325,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999006684805621,
+          "pearson": 0.9999804137879422,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0073493575646529094,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998753662123345,
+          "pearson": 0.9999874668806761,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006253732145376655,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998784954681224,
+          "pearson": 0.9999790827782528,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00829653351887257,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999276694876461,
+          "pearson": 0.9999839578157477,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007399061523593097,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9995330256291414,
+          "pearson": 0.999961228784752,
+          "sign_agreement": 0.98046875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.009918613928542642,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998778696169648,
+          "pearson": 0.9999781078391443,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007911067298983644,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998936053032124,
+          "pearson": 0.9999870250086634,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006224188321758535,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999215003833786,
+          "pearson": 0.9999863774869688,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006813860098431559,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999228414930019,
+          "pearson": 0.9999856748570739,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007260026716013788,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999080892871448,
+          "pearson": 0.9999815614190294,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007565992439332092,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999911754986782,
+          "pearson": 0.9999775525198742,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008601496450001042,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.99988868790126,
+          "pearson": 0.9999818562980731,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007856703828954733,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999030824778842,
+          "pearson": 0.9999844508697457,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007058088639812414,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998306625582221,
+          "pearson": 0.9999767550122732,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007710861563971533,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998761708781085,
+          "pearson": 0.9999847471978301,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0065502769049026015,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998315566313043,
+          "pearson": 0.9999814306288929,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007189043113007245,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998858268673968,
+          "pearson": 0.9999855336840013,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006658195512494989,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998970921882332,
+          "pearson": 0.9999817251739328,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007512882380985684,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999147054279535,
+          "pearson": 0.9999854969241775,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0069642215966979615,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997189928302491,
+          "pearson": 0.9999369854420229,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.013468993629615978,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997227479371946,
+          "pearson": 0.9999535683717283,
+          "sign_agreement": 0.984375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.011717236390439796,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998807306508279,
+          "pearson": 0.999990340121078,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.005453693911989383,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998719687346219,
+          "pearson": 0.9999754650389124,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008494233188739448,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999116655794738,
+          "pearson": 0.9999845069051085,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007061985841384883,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999266860072555,
+          "pearson": 0.9999859560443061,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006887083336271063,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999143477987206,
+          "pearson": 0.9999821995762795,
+          "sign_agreement": 0.998046875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007545335442328049,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998901184181916,
+          "pearson": 0.9999849978881318,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007004374222201657,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998624915599501,
+          "pearson": 0.9999831359230139,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0068252409668432615,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998758132488756,
+          "pearson": 0.9999776223633062,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008157936324414921,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998549813460592,
+          "pearson": 0.9999755294276318,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00857094061948639,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999862044523409,
+          "pearson": 0.9999739881348817,
+          "sign_agreement": 0.98828125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00890520768544177,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999851315646422,
+          "pearson": 0.9999761048257177,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00797431645677964,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999915331279111,
+          "pearson": 0.9999837933788601,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007479070709471629,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998826082043007,
+          "pearson": 0.9999777678324391,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007844218465093488,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9994707981426169,
+          "pearson": 0.9999143944938006,
+          "sign_agreement": 0.984375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.014769576063131467,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9990079365079365,
+          "pearson": 0.9997812102570253,
+          "sign_agreement": 0.9765625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.023246480194671407,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9996412978794017,
+          "pearson": 0.999930004591654,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.013386916535859706,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9992783936153168,
+          "pearson": 0.9998567813446909,
+          "sign_agreement": 0.9765625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.018742241404664205,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998975392247743,
+          "pearson": 0.9999806422676215,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008273982661935984,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999905764697131,
+          "pearson": 0.9999809422365801,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007581909497356712,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999343750357629,
+          "pearson": 0.9999858045863974,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007113998883599823,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.999936789033085,
+          "pearson": 0.999982885176597,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007415337029854457,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999118443940902,
+          "pearson": 0.9999842646677142,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007347695597454627,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998510474244973,
+          "pearson": 0.9999751336699111,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008340886775626458,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998866315331708,
+          "pearson": 0.9999844095217603,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006487909694119394,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998738462880946,
+          "pearson": 0.9999804689328315,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007681501892899504,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999277588949543,
+          "pearson": 0.9999838861322827,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007535294520633633,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999034401071171,
+          "pearson": 0.999984238910761,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007539399397575451,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998860056820132,
+          "pearson": 0.9999814622286604,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007491900269190102,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999384877719413,
+          "pearson": 0.9999852724863584,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006948345364528828,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999076422506037,
+          "pearson": 0.9999861097862223,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006221377926147996,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998847539796981,
+          "pearson": 0.999981711795472,
+          "sign_agreement": 0.990234375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.00837069602857596,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999071952140626,
+          "pearson": 0.9999743668250898,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008781546559092968,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999206957176046,
+          "pearson": 0.999983706205183,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007743681514803982,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9997866741625754,
+          "pearson": 0.9999603440224247,
+          "sign_agreement": 0.986328125,
+          "top1_agreement": true,
+          "rel_l2_error": 0.010271282335841915,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9978433169109989,
+          "pearson": 0.999590856954994,
+          "sign_agreement": 0.974609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.031846052100198634,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9985604529302708,
+          "pearson": 0.9996775271077858,
+          "sign_agreement": 0.9765625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.027639653935536527,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9933598980327532,
+          "pearson": 0.9983266290706222,
+          "sign_agreement": 0.951171875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.06369813863931911,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9983996091827743,
+          "pearson": 0.999688682727767,
+          "sign_agreement": 0.9765625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.026598879396977873,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9989098566908138,
+          "pearson": 0.9997674464920075,
+          "sign_agreement": 0.984375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.023752116578317033,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998729522150124,
+          "pearson": 0.99998499066319,
+          "sign_agreement": 0.998046875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.006671921917538689,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998568588995319,
+          "pearson": 0.9999834077227981,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007170441061137516,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999437628031266,
+          "pearson": 0.9999851479336578,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007341095732091903,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998511368318055,
+          "pearson": 0.9999841738553943,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.0064982296238883745,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999392924377153,
+          "pearson": 0.9999840479073803,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007228983711849057,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998817141312184,
+          "pearson": 0.9999802395590275,
+          "sign_agreement": 0.99609375,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007927009667473535,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9998216324200914,
+          "pearson": 0.999975668792736,
+          "sign_agreement": 0.9921875,
+          "top1_agreement": true,
+          "rel_l2_error": 0.008233056129590422,
+          "n_features": 512
+        },
+        {
+          "spearman": 0.9999135431329466,
+          "pearson": 0.999981889338305,
+          "sign_agreement": 0.994140625,
+          "top1_agreement": true,
+          "rel_l2_error": 0.007689179524189662,
+          "n_features": 512
+        }
+      ]
+    },
+    "lime_r2": {
+      "mean": 0.9999460056675449,
+      "median": 0.9999815428912477,
+      "min": 0.9976309047137838,
+      "max": 0.9999905038138562
+    },
+    "kernel_shap_r2": {
+      "mean": -0.2573201409158063,
+      "median": 0.20859072441991877,
+      "min": -8.620352519404856,
+      "max": 0.9279585014832568
+    }
+  },
+  "coherencia_canonica": {
+    "descripcion": "Correlacion entre (a) la proyeccion sobre la base PCA de la atribucion analitica 512-d, V @ phi, y (b) el credito que la base canonica atribuye a cada componente, beta_j multiplicado por la desviacion de la coordenada. Mide cuanto se alinea la atribucion por dimension del embedding con las direcciones que la compresion S-PCA declara canonicas. Un valor bajo indica que la compresion de 12 dimensiones reorganiza el credito, no que el metodo falle.",
+    "beta_por_componente": [
+      -0.17057616232532694,
+      0.06663240411533515,
+      0.13533425748074154,
+      -0.03673537495508789,
+      -0.029121138392220795,
+      0.029197748874001755,
+      -0.010192618208915628,
+      0.07282334080232765,
+      0.0038302843149241555,
+      -0.05278031399707194,
+      0.01583944539168376,
+      0.006645504357815353
+    ],
+    "n_cases": 200,
+    "spearman": {
+      "mean": 0.318986013986014,
+      "median": 0.3391608391608392,
+      "min": -0.47552447552447563,
+      "max": 0.9090909090909093,
+      "n": 200
+    },
+    "pearson": {
+      "mean": 0.4791829283291326,
+      "median": 0.5420573710935583,
+      "min": -0.4865445516752404,
+      "max": 0.8904389321690924,
+      "n": 200
+    },
+    "sign_agreement": {
+      "mean": 0.5908333333333333,
+      "median": 0.5833333333333334,
+      "min": 0.3333333333333333,
+      "max": 0.9166666666666666,
+      "n": 200
+    },
+    "rel_l2_error": {
+      "mean": 8.837447551955615,
+      "median": 8.641810066116085,
+      "min": 3.5116479933644134,
+      "max": 19.496786651382294,
+      "n": 200
+    },
+    "top1_agreement_rate": 0.4,
+    "per_case": [
+      {
+        "spearman": 0.013986013986013988,
+        "pearson": 0.15538261118851357,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 5.503862675100371,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.23776223776223782,
+        "pearson": 0.5984684905346863,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 6.368075187157069,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4615384615384616,
+        "pearson": 0.3319456303725131,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 5.130925021983787,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4965034965034966,
+        "pearson": 0.5559838842795082,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 5.9507803773287975,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.06293706293706294,
+        "pearson": 0.3535870800682761,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 5.261048235387607,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6293706293706295,
+        "pearson": 0.6065059293808012,
+        "sign_agreement": 0.75,
+        "top1_agreement": true,
+        "rel_l2_error": 10.652136476483998,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.27272727272727276,
+        "pearson": 0.6310167887177225,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 9.292324779813079,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4475524475524476,
+        "pearson": 0.6432488227084266,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 9.274520605655711,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.7062937062937064,
+        "pearson": 0.370843201838911,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.390974304457181,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1608391608391609,
+        "pearson": 0.6052466337169758,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 14.31938528616636,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.11888111888111891,
+        "pearson": 0.6533199241395391,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 16.227556713870147,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.027972027972027975,
+        "pearson": 0.6475924202474658,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 7.958908308445884,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.8391608391608393,
+        "pearson": 0.6363875421020231,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 8.633436225459308,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6643356643356645,
+        "pearson": 0.7401493477888269,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 8.907853434383746,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6433566433566436,
+        "pearson": 0.5262413985293299,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.08546485956721,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6993006993006995,
+        "pearson": 0.5732229235276157,
+        "sign_agreement": 0.75,
+        "top1_agreement": true,
+        "rel_l2_error": 9.133057766039117,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1258741258741259,
+        "pearson": 0.3590435902170077,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 8.58469860454107,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2517482517482518,
+        "pearson": 0.37151674340298113,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 6.942630883546689,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1118881118881119,
+        "pearson": 0.4670341563441744,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 9.500489483928336,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.11888111888111891,
+        "pearson": 0.23202649640751766,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 6.662277813428087,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6293706293706295,
+        "pearson": 0.777981474638466,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 9.865650726219334,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4055944055944056,
+        "pearson": 0.6755546383169426,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 9.539846145113884,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.7762237762237764,
+        "pearson": 0.757043975541164,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 10.482916397796078,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6853146853146854,
+        "pearson": 0.5001901561557056,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 8.471296898166962,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5244755244755246,
+        "pearson": 0.3365419400706607,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 9.188698203635877,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.17482517482517487,
+        "pearson": -0.01777396706467566,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 6.464424805319813,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2657342657342658,
+        "pearson": 0.43985845840537535,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 4.868548799765855,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.013986013986013988,
+        "pearson": 0.07225098493534504,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 7.416908446497222,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5874125874125875,
+        "pearson": 0.6897418884388098,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 9.717345747046588,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5454545454545455,
+        "pearson": 0.7105555665062679,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 11.34848688794675,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3846153846153847,
+        "pearson": 0.4020639817810445,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.502714333284406,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2517482517482518,
+        "pearson": 0.7777806520599303,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 11.6390648626562,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3916083916083917,
+        "pearson": 0.642108268478483,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 9.861108442892409,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4685314685314686,
+        "pearson": 0.7166927205433546,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 11.600609135171872,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2797202797202798,
+        "pearson": 0.21048883359428672,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 11.126981473027872,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4685314685314686,
+        "pearson": 0.415293865156251,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 10.607695027609479,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4125874125874127,
+        "pearson": 0.5684785795623621,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 9.093655771886045,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6783216783216786,
+        "pearson": 0.7492942135386443,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 4.710868734371327,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6573426573426574,
+        "pearson": 0.7265933627372761,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 6.221085874306227,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3916083916083917,
+        "pearson": 0.42665943517685745,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 5.28095417996411,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3426573426573427,
+        "pearson": 0.6357169179339538,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 8.950559261756698,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6643356643356645,
+        "pearson": 0.6709218880944128,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 9.370350938069357,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.34965034965034975,
+        "pearson": 0.5897120904385841,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 9.667343516143465,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.41958041958041964,
+        "pearson": 0.711202129313414,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 12.409071900940656,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1398601398601399,
+        "pearson": 0.8414539863752653,
+        "sign_agreement": 0.3333333333333333,
+        "top1_agreement": true,
+        "rel_l2_error": 11.458079295541774,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.7552447552447554,
+        "pearson": 0.8101601010655308,
+        "sign_agreement": 0.9166666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 10.196070928851421,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.08391608391608393,
+        "pearson": 0.5426095761292796,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 16.642140020981756,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3776223776223777,
+        "pearson": 0.7380959279280328,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 12.461546109478505,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5104895104895105,
+        "pearson": 0.6044753180714224,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 4.756277752832005,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3986013986013987,
+        "pearson": 0.23687461362702983,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 7.52361382100611,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5594405594405596,
+        "pearson": 0.6420547451765479,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 6.142937875243344,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6153846153846155,
+        "pearson": 0.3505423015387371,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 9.641468886986491,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.18881118881118886,
+        "pearson": 0.18722055211284092,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 7.17116542098733,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3216783216783218,
+        "pearson": 0.43180929304628646,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 4.087628130914989,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.08391608391608393,
+        "pearson": 0.1422385446172473,
+        "sign_agreement": 0.3333333333333333,
+        "top1_agreement": false,
+        "rel_l2_error": 5.409650525761102,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3006993006993008,
+        "pearson": 0.4935420132381889,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 12.553427815680948,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.47552447552447563,
+        "pearson": 0.23733953103349836,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 7.004192113763436,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.7762237762237764,
+        "pearson": 0.8904389321690924,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 8.741348080706754,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.30769230769230776,
+        "pearson": 0.2508603516462226,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 4.099669562941983,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3006993006993008,
+        "pearson": 0.5945046110210626,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 9.941253652526607,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4615384615384616,
+        "pearson": 0.47137526260001594,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 8.626389601641147,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.020979020979020983,
+        "pearson": 0.39271682615095893,
+        "sign_agreement": 0.3333333333333333,
+        "top1_agreement": true,
+        "rel_l2_error": 9.23567991047085,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4895104895104896,
+        "pearson": 0.31030260097896345,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 9.142744044543193,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.29370629370629375,
+        "pearson": 0.31867894725178186,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.035129912323345,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.18181818181818185,
+        "pearson": 0.11685706578046268,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 9.417519435457015,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.43356643356643365,
+        "pearson": 0.541505166057837,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.779393941068061,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.47552447552447563,
+        "pearson": -0.3363720396121466,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 5.6936093946189406,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6083916083916086,
+        "pearson": 0.6873966022091883,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 9.897434590116221,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4895104895104896,
+        "pearson": 0.34568313002721535,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.02228451022523,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4965034965034966,
+        "pearson": 0.633540526776705,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 6.141642101921927,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.15384615384615388,
+        "pearson": 0.6416537428461359,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 13.36579705111298,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6783216783216786,
+        "pearson": 0.7269486036129054,
+        "sign_agreement": 0.75,
+        "top1_agreement": true,
+        "rel_l2_error": 12.326783933857898,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.7202797202797204,
+        "pearson": 0.6463386324714441,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 10.467487100699525,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.21678321678321683,
+        "pearson": 0.23070636725330132,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 6.2141884011338595,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2587412587412588,
+        "pearson": 0.24201734293996854,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 4.872799169041737,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6153846153846155,
+        "pearson": 0.6441224903462482,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 10.120561183197779,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.21678321678321683,
+        "pearson": 0.29082233376771516,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 5.103474663354716,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6083916083916086,
+        "pearson": 0.7191171567622588,
+        "sign_agreement": 0.9166666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 10.180884636146434,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.16783216783216787,
+        "pearson": 0.6072545821118563,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 13.91931527329589,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1258741258741259,
+        "pearson": -0.07123063592917556,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 8.10458910456578,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.020979020979020983,
+        "pearson": 0.21325319815301746,
+        "sign_agreement": 0.3333333333333333,
+        "top1_agreement": false,
+        "rel_l2_error": 7.942313975950304,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.18181818181818185,
+        "pearson": 0.45746459359590974,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.399494547789617,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1608391608391609,
+        "pearson": 0.1755035887649259,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 10.494693639074423,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.37062937062937074,
+        "pearson": 0.4072799732152906,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 8.33482450281758,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.07692307692307694,
+        "pearson": -0.03266091183807345,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 4.572421907355291,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5664335664335666,
+        "pearson": 0.619476394155732,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 8.843115637354336,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.30769230769230776,
+        "pearson": 0.4501238555696247,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 8.650183906772861,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.44055944055944063,
+        "pearson": 0.6632814694708544,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 4.714379366108701,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1328671328671329,
+        "pearson": 0.14647314754047708,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 8.422575242983115,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.37062937062937074,
+        "pearson": 0.8149186556903455,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 12.860248531131019,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.47552447552447563,
+        "pearson": 0.684069535855403,
+        "sign_agreement": 0.75,
+        "top1_agreement": true,
+        "rel_l2_error": 9.93796119137685,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5944055944055945,
+        "pearson": 0.6381440155148695,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 12.087259431085418,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4615384615384616,
+        "pearson": 0.7270524288489759,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 11.33816327347452,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.3286713286713287,
+        "pearson": -0.4865445516752404,
+        "sign_agreement": 0.3333333333333333,
+        "top1_agreement": true,
+        "rel_l2_error": 4.406320689742876,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.14685314685314688,
+        "pearson": 0.2988787735433144,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 10.339523052306934,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3636363636363637,
+        "pearson": 0.4969715528190908,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 11.268788214941578,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4475524475524476,
+        "pearson": 0.6526687136904663,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 9.537762319020453,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1398601398601399,
+        "pearson": 0.23209496077378,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 6.39016558191054,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1328671328671329,
+        "pearson": 0.1044392929336886,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 5.592584358801195,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.11888111888111891,
+        "pearson": 0.7579528366704786,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 19.496786651382294,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3986013986013987,
+        "pearson": 0.6705414999336744,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 12.228766699915111,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.05594405594405595,
+        "pearson": 0.5267263203145572,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 11.292781954011215,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.15384615384615388,
+        "pearson": 0.6722578505980406,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 12.926086640930487,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3286713286713287,
+        "pearson": 0.7576983029039244,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 12.082777358071684,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.048951048951048966,
+        "pearson": 0.7789180841705651,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 14.624983022808623,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6783216783216786,
+        "pearson": 0.775175748588063,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 9.907947930612217,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6153846153846155,
+        "pearson": 0.5511524552768011,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 5.041472449066494,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.2307692307692308,
+        "pearson": -0.4648513421886931,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 5.590117361602355,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5874125874125875,
+        "pearson": 0.8009296004545772,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 10.9134140106317,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6783216783216786,
+        "pearson": 0.5641339212763484,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 3.8241773542404265,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.44055944055944063,
+        "pearson": 0.3464971991690752,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 7.364359068663307,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.06993006993006995,
+        "pearson": 0.2227134332204615,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 6.422525585825785,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3916083916083917,
+        "pearson": 0.5426418466457066,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.799898208138016,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3006993006993008,
+        "pearson": 0.5392605784091011,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 8.489619106955107,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4475524475524476,
+        "pearson": 0.6232869244360885,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 9.159831887911666,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.31468531468531474,
+        "pearson": 0.3794259469751473,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 4.453933171827259,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.44055944055944063,
+        "pearson": 0.7710306452092888,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 14.065960895018852,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2867132867132868,
+        "pearson": 0.6200708874628351,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 10.063537545471787,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2237762237762238,
+        "pearson": 0.22831218419655033,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 5.523247560602676,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1398601398601399,
+        "pearson": 0.10817851809153797,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 7.9269951446255575,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3426573426573427,
+        "pearson": 0.6344687225863699,
+        "sign_agreement": 0.75,
+        "top1_agreement": true,
+        "rel_l2_error": 6.8757901199519385,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.16783216783216787,
+        "pearson": 0.19548797750629227,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 8.594567198173996,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5454545454545455,
+        "pearson": 0.4035602623964208,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 8.106767359168,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.31468531468531474,
+        "pearson": 0.4543463177900093,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 4.39270534151101,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6923076923076924,
+        "pearson": 0.5279785941277917,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 8.976652751978166,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6573426573426574,
+        "pearson": 0.44066535767356874,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 6.37117359445536,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.31468531468531474,
+        "pearson": 0.2920304095565202,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 4.852134383779047,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2587412587412588,
+        "pearson": 0.4272621954319496,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 9.009705386704,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2447552447552448,
+        "pearson": 0.48656998854984984,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 9.812781727135524,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1398601398601399,
+        "pearson": 0.13587964813228534,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 6.024660136658767,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4265734265734266,
+        "pearson": 0.6020281321601856,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 10.087800165506817,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6993006993006995,
+        "pearson": 0.7147518016757594,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 9.759491156384087,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5244755244755246,
+        "pearson": 0.602209289741061,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 7.241792550216188,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4125874125874127,
+        "pearson": 0.2228359739976729,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 4.425075438239918,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5314685314685316,
+        "pearson": 0.7159587345133805,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 11.667748104052809,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.7552447552447554,
+        "pearson": 0.8054311617509557,
+        "sign_agreement": 0.75,
+        "top1_agreement": true,
+        "rel_l2_error": 10.709768795445111,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.16783216783216787,
+        "pearson": -0.07553221882076883,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 6.298965769316803,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5034965034965035,
+        "pearson": 0.6858880934122925,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 7.317935045049808,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6293706293706295,
+        "pearson": 0.7148252610126941,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 5.294673621568832,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4615384615384616,
+        "pearson": 0.46001833033724315,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 9.28208522975584,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6643356643356645,
+        "pearson": 0.6573950959326184,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 6.614045694935983,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.10489510489510491,
+        "pearson": 0.3454516894170002,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 4.75980281549802,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.44055944055944063,
+        "pearson": 0.36706463768571607,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 7.053549321978216,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1608391608391609,
+        "pearson": 0.23022637563437265,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 5.335603441518171,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4895104895104896,
+        "pearson": 0.6924369306393451,
+        "sign_agreement": 0.75,
+        "top1_agreement": true,
+        "rel_l2_error": 13.13527655842548,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5174825174825176,
+        "pearson": 0.7041463984036578,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 7.9927218355998,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.034965034965034975,
+        "pearson": 0.41996069234874017,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 5.525249381465196,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.30769230769230776,
+        "pearson": 0.42442414165590947,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 4.523545621889875,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1608391608391609,
+        "pearson": 0.1354291394853044,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 6.591141241190978,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6363636363636365,
+        "pearson": 0.5907556993234904,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 7.463973216446501,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4825174825174826,
+        "pearson": 0.6121443525845794,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": true,
+        "rel_l2_error": 9.444768320261494,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1398601398601399,
+        "pearson": 0.7413135306267702,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 14.456649978568029,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1118881118881119,
+        "pearson": 0.5631128617420659,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 16.722169828804496,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.44055944055944063,
+        "pearson": -0.17678870819086967,
+        "sign_agreement": 0.3333333333333333,
+        "top1_agreement": false,
+        "rel_l2_error": 3.9431126243289794,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.33566433566433573,
+        "pearson": 0.3783125482074603,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 7.945761958937031,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.34965034965034975,
+        "pearson": 0.335692115112911,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 5.9151901895666805,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5594405594405596,
+        "pearson": 0.6498518407169123,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 6.299772422753905,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.44055944055944063,
+        "pearson": 0.6265515849279479,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 9.533562147606418,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1258741258741259,
+        "pearson": 0.15524571383725608,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 7.426085111395711,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2517482517482518,
+        "pearson": 0.20871486349726087,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.164666619696729,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5944055944055945,
+        "pearson": 0.6420233569657022,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 8.024806253910828,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.034965034965034975,
+        "pearson": 0.1630098712232384,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 4.6701735740843064,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3986013986013987,
+        "pearson": 0.8072913228126272,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 14.778933628752183,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.1328671328671329,
+        "pearson": 0.5427052655382462,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 7.214485388276128,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.048951048951048966,
+        "pearson": 0.37805935941952057,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 8.226823324712718,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.8391608391608393,
+        "pearson": 0.7278919055993786,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 5.263388031947133,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.09090909090909093,
+        "pearson": 0.6985987486140262,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 11.304462782667716,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.04195804195804197,
+        "pearson": 0.77906723611671,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 15.185790149862626,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.048951048951048966,
+        "pearson": 0.6073297016801875,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 12.401522384266864,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2517482517482518,
+        "pearson": 0.8277108944969136,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 13.458004508063311,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.05594405594405595,
+        "pearson": 0.07393159690693354,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 10.308226061618235,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4825174825174826,
+        "pearson": 0.5128174446704212,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 11.781500205396448,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4475524475524476,
+        "pearson": 0.6514820137436321,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 8.77283569622342,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5594405594405596,
+        "pearson": 0.6470041138190158,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 10.12932061357662,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1118881118881119,
+        "pearson": 0.10262692710620946,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 9.511307511670912,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1328671328671329,
+        "pearson": 0.20865679936483586,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": false,
+        "rel_l2_error": 6.558802735210752,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.020979020979020983,
+        "pearson": 0.4241147123276758,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 8.180996553735216,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6433566433566436,
+        "pearson": 0.6123794448800933,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 7.97652985363435,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.29370629370629375,
+        "pearson": 0.47549375496440743,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 7.4598304972988565,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.5804195804195805,
+        "pearson": 0.7769944404452195,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 9.102942351727581,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2657342657342658,
+        "pearson": 0.5660228116036443,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 11.536127819603431,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.9090909090909093,
+        "pearson": 0.6585597705993612,
+        "sign_agreement": 0.9166666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 8.813632494461412,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1258741258741259,
+        "pearson": 0.38505267127253606,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 8.212606740102059,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.16783216783216787,
+        "pearson": 0.4101539244509602,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 8.109752180281665,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3216783216783218,
+        "pearson": 0.6551945010696265,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 9.41567323904215,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4265734265734266,
+        "pearson": 0.6979235629224442,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 9.417490517331917,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1258741258741259,
+        "pearson": 0.49440744863440655,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 13.13331126907142,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.1118881118881119,
+        "pearson": 0.6280822565465162,
+        "sign_agreement": 0.3333333333333333,
+        "top1_agreement": true,
+        "rel_l2_error": 12.977106268954255,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.11888111888111891,
+        "pearson": 0.591832237184074,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 13.322440973986083,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.4615384615384616,
+        "pearson": 0.8057971246317074,
+        "sign_agreement": 0.8333333333333334,
+        "top1_agreement": true,
+        "rel_l2_error": 18.596713341907932,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.04195804195804197,
+        "pearson": 0.7961399106074426,
+        "sign_agreement": 0.5,
+        "top1_agreement": true,
+        "rel_l2_error": 14.906518820550884,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.21678321678321683,
+        "pearson": 0.6476110253448747,
+        "sign_agreement": 0.4166666666666667,
+        "top1_agreement": true,
+        "rel_l2_error": 17.789983619710917,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2657342657342658,
+        "pearson": 0.20396445395924212,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 5.720737397439474,
+        "n_features": 12
+      },
+      {
+        "spearman": -0.4125874125874127,
+        "pearson": -0.13184104000606495,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 4.303179995759433,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.23776223776223782,
+        "pearson": 0.5079070217785501,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 12.631957860816028,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.034965034965034975,
+        "pearson": 0.15258317487754616,
+        "sign_agreement": 0.5,
+        "top1_agreement": false,
+        "rel_l2_error": 5.561833485350961,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3566433566433567,
+        "pearson": 0.4764668745647529,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 9.237596517428019,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.6503496503496505,
+        "pearson": 0.39535631525075055,
+        "sign_agreement": 0.75,
+        "top1_agreement": false,
+        "rel_l2_error": 7.946106992552467,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.3636363636363637,
+        "pearson": 0.37130357104928485,
+        "sign_agreement": 0.6666666666666666,
+        "top1_agreement": false,
+        "rel_l2_error": 3.5116479933644134,
+        "n_features": 12
+      },
+      {
+        "spearman": 0.2587412587412588,
+        "pearson": 0.32446070016764605,
+        "sign_agreement": 0.5833333333333334,
+        "top1_agreement": false,
+        "rel_l2_error": 10.068718067212783,
+        "n_features": 12
+      }
+    ]
+  },
+  "segundos_total": 27.98
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prometeo · el laboratorio de la tesis</title>
+  <meta name="description" content="Un lugar para ver paso a paso cómo una fórmula de una variable llega a su veredicto sobre una mamografía, moverle las perillas y ver dónde falla.">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera-in">
+      <a class="marca" href="#inicio" aria-label="Prometeo, ir al inicio"><b>Prometeo</b><span>tesis RS-KAN</span></a>
+      <nav class="nav" aria-label="Secciones">
+        <button data-vista="inicio">Inicio</button>
+        <button data-vista="lab">Laboratorio</button>
+        <button data-vista="formula">Fórmula</button>
+        <button data-vista="resultados">Resultados</button>
+        <button data-vista="explorador">Explorador<span class="local" hidden title="Necesita la app local">app</span></button>
+        <button data-vista="externo">Estudio externo<span class="local" hidden title="Necesita la app local">app</span></button>
+      </nav>
+      <div class="estado" id="estado" title=""><i></i><span>Cargando…</span></div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="vista" id="vista-inicio" hidden></section>
+    <section class="vista" id="vista-lab" hidden></section>
+    <section class="vista" id="vista-formula" hidden></section>
+    <section class="vista" id="vista-resultados" hidden></section>
+    <section class="vista" id="vista-explorador" hidden></section>
+    <section class="vista" id="vista-externo" hidden></section>
+  </main>
+
+  <footer class="pie">
+    <p>Prometeo es una herramienta de investigación creada para una tesis de pregrado. No es un dispositivo médico, no está validada clínicamente y no debe usarse para decidir sobre la salud de nadie. Las imágenes y etiquetas vienen del conjunto público CBIS-DDSM; todos los números salen de los archivos del repositorio.</p>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <div class="modal-cab"><h2 id="modal-titulo"></h2><button class="btn sec chico" id="modal-cerrar">Cerrar</button></div>
+      <pre class="modal-cuerpo" id="modal-cuerpo"></pre>
+      <div class="modal-pie" id="modal-pie"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

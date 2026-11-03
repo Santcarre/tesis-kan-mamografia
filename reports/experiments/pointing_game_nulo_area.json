@@ -1,0 +1,46 @@
+{
+  "n": 368,
+  "n_malignant": 159,
+  "n_benign": 209,
+  "nulls": {
+    "global": {
+      "mean_area_mask_px": 287.7,
+      "null_image_mean": 0.005734,
+      "null_image_ci95": [
+        0.004938,
+        0.006634
+      ],
+      "null_breast_mean": 0.015312,
+      "null_breast_ci95": [
+        0.013011,
+        0.018064
+      ]
+    },
+    "malignant": {
+      "mean_area_mask_px": 355.7,
+      "null_image_mean": 0.00709,
+      "null_image_ci95": [
+        0.005741,
+        0.008644
+      ],
+      "null_breast_mean": 0.018669,
+      "null_breast_ci95": [
+        0.014702,
+        0.023465
+      ]
+    },
+    "benign": {
+      "mean_area_mask_px": 235.8,
+      "null_image_mean": 0.004699,
+      "null_image_ci95": [
+        0.003901,
+        0.005754
+      ],
+      "null_breast_mean": 0.012742,
+      "null_breast_ci95": [
+        0.010341,
+        0.015861
+      ]
+    }
+  }
+}

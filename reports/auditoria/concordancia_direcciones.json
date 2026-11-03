@@ -1,0 +1,185 @@
+{
+  "descripcion": "Direccion diagnostica por extractor: logistica L2 (C=0,01) sobre GAP estandarizado; puntaje en prueba",
+  "n_test": 1012,
+  "n_pacientes": 318,
+  "B": 2000,
+  "semilla_bootstrap": 0,
+  "auc_puntaje": {
+    "ResNet-18 Robusto": 0.7161,
+    "ResNet-18 Base": 0.7285,
+    "DenseNet-121": 0.6738,
+    "ResNet-50": 0.6616,
+    "EfficientNet-B0": 0.646
+  },
+  "auc_menos_u0": 0.7185,
+  "correlacion_con_menos_u0": {
+    "ResNet-18 Robusto": {
+      "pearson": 0.977,
+      "spearman": 0.97,
+      "ic95_pearson": [
+        0.973,
+        0.981
+      ],
+      "pearson_benignas": 0.974,
+      "pearson_malignas": 0.974
+    },
+    "ResNet-18 Base": {
+      "pearson": 0.717,
+      "spearman": 0.661,
+      "ic95_pearson": [
+        0.67,
+        0.756
+      ],
+      "pearson_benignas": 0.677,
+      "pearson_malignas": 0.654
+    },
+    "DenseNet-121": {
+      "pearson": 0.636,
+      "spearman": 0.574,
+      "ic95_pearson": [
+        0.582,
+        0.679
+      ],
+      "pearson_benignas": 0.599,
+      "pearson_malignas": 0.578
+    },
+    "ResNet-50": {
+      "pearson": 0.531,
+      "spearman": 0.491,
+      "ic95_pearson": [
+        0.47,
+        0.582
+      ],
+      "pearson_benignas": 0.502,
+      "pearson_malignas": 0.444
+    },
+    "EfficientNet-B0": {
+      "pearson": 0.468,
+      "spearman": 0.418,
+      "ic95_pearson": [
+        0.402,
+        0.526
+      ],
+      "pearson_benignas": 0.409,
+      "pearson_malignas": 0.423
+    }
+  },
+  "matriz_pearson": {
+    "ResNet-18 Robusto": {
+      "ResNet-18 Robusto": 1.0,
+      "ResNet-18 Base": 0.719,
+      "DenseNet-121": 0.635,
+      "ResNet-50": 0.525,
+      "EfficientNet-B0": 0.47
+    },
+    "ResNet-18 Base": {
+      "ResNet-18 Robusto": 0.719,
+      "ResNet-18 Base": 1.0,
+      "DenseNet-121": 0.615,
+      "ResNet-50": 0.534,
+      "EfficientNet-B0": 0.454
+    },
+    "DenseNet-121": {
+      "ResNet-18 Robusto": 0.635,
+      "ResNet-18 Base": 0.615,
+      "DenseNet-121": 1.0,
+      "ResNet-50": 0.533,
+      "EfficientNet-B0": 0.481
+    },
+    "ResNet-50": {
+      "ResNet-18 Robusto": 0.525,
+      "ResNet-18 Base": 0.534,
+      "DenseNet-121": 0.533,
+      "ResNet-50": 1.0,
+      "EfficientNet-B0": 0.401
+    },
+    "EfficientNet-B0": {
+      "ResNet-18 Robusto": 0.47,
+      "ResNet-18 Base": 0.454,
+      "DenseNet-121": 0.481,
+      "ResNet-50": 0.401,
+      "EfficientNet-B0": 1.0
+    }
+  },
+  "hungaro_spca_b_12": {
+    "nota": "Reproduce cross_architecture_correlation.json; el eje compartido no es u0",
+    "comparaciones": {
+      "ResNet-18 Base": {
+        "par_dominante": [
+          1,
+          2
+        ],
+        "r": -0.8094,
+        "media_abs_r_12_pares": 0.4257,
+        "auc_eje_ref": 0.583,
+        "auc_eje_obj": 0.528,
+        "corr_u0_eje_ref": -0.273,
+        "corr_u0_eje_obj": 0.003
+      },
+      "DenseNet-121": {
+        "par_dominante": [
+          1,
+          0
+        ],
+        "r": -0.9074,
+        "media_abs_r_12_pares": 0.4001,
+        "auc_eje_ref": 0.583,
+        "auc_eje_obj": 0.577,
+        "corr_u0_eje_ref": -0.273,
+        "corr_u0_eje_obj": 0.28
+      },
+      "ResNet-50": {
+        "par_dominante": [
+          1,
+          0
+        ],
+        "r": -0.9425,
+        "media_abs_r_12_pares": 0.3823,
+        "auc_eje_ref": 0.583,
+        "auc_eje_obj": 0.571,
+        "corr_u0_eje_ref": -0.273,
+        "corr_u0_eje_obj": 0.184
+      },
+      "EfficientNet-B0": {
+        "par_dominante": [
+          1,
+          0
+        ],
+        "r": -0.8962,
+        "media_abs_r_12_pares": 0.3382,
+        "auc_eje_ref": 0.583,
+        "auc_eje_obj": 0.559,
+        "corr_u0_eje_ref": -0.273,
+        "corr_u0_eje_obj": 0.234
+      }
+    },
+    "auc_ejes_robusto": [
+      0.621,
+      0.583,
+      0.627,
+      0.556,
+      0.51,
+      0.509,
+      0.505,
+      0.521,
+      0.506,
+      0.534,
+      0.504,
+      0.522
+    ],
+    "corr_u0_ejes_robusto": [
+      0.615,
+      -0.273,
+      -0.469,
+      0.078,
+      0.016,
+      -0.125,
+      -0.108,
+      -0.069,
+      -0.064,
+      0.146,
+      0.054,
+      -0.144
+    ]
+  }
+}

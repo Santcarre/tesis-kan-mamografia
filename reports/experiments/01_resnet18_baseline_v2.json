@@ -1,0 +1,23 @@
+{
+  "experimento": "ResNet18 Baseline V2",
+  "config": {
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "epochs": 20
+  },
+  "dataset": {
+    "train": 4278,
+    "val": 1134,
+    "test": 1012
+  },
+  "mejor_epoca": 14,
+  "mejor_auc_val": 0.7666804245840331,
+  "auc_test": 0.7325165530907157,
+  "recall_test": 0.5933014354066986,
+  "umbral_youden": 0.6663354635238647,
+  "historial": "no disponible (sesion reiniciada)",
+  "recall_test_val_thr": 0.6531,
+  "umbral_youden_val": 0.5366,
+  "nota_calibracion": "Umbral de Youden calibrado en validacion y aplicado congelado a prueba (auditoria 25-sep-2026)."
+}

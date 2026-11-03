@@ -1,0 +1,23 @@
+# Entorno exacto con el que se produjeron los resultados de la tesis (Windows, Python 3.10, CUDA 13.0).
+# Solo para auditoría: los torch/torchvision "nightly" ya no se pueden instalar; para instalar use requirements.txt.
+# Nota: torch/torchvision son nightly con soporte CUDA 13.0 (GPU Blackwell);
+# en CPU o CUDA 12.x, sustitúyalos por los estables equivalentes de pytorch.org.
+torch==2.14.0.dev20260810+cu130
+torchvision==0.29.0.dev20260810+cu130
+pykan==0.2.8
+scikit-learn==1.7.2
+scipy==1.15.3
+numpy==2.2.6
+pandas==2.3.3
+sympy==1.14.0
+pillow==12.3.0
+matplotlib==3.10.9
+seaborn==0.13.2
+tqdm==4.70.0
+captum==0.9.0
+reportlab==5.0.1
+pywebview==6.2.1
+requests==2.34.2
+streamlit==1.64.0
+jupyter==1.1.1
+ipykernel==7.3.0

@@ -1,0 +1,971 @@
+{
+ "tau_logit": 0.1296,
+ "tau_p_sym": 0.5324,
+ "B_bootstrap": 2000,
+ "nota": "birads_rad = valoración BI-RADS del radiólogo en CBIS-DDSM (assessment, entero 0-5).",
+ "vinculo": {
+  "validacion": {
+   "imagenes": 1134,
+   "pacientes": 249,
+   "completas": 502,
+   "recortes": 632,
+   "ambiguas_excluidas": 4,
+   "sin_vinculo": 13,
+   "distribucion_todas": [
+    {
+     "birads_radiologo": 0,
+     "n": 74,
+     "malignas": 10,
+     "tasa_malignidad": 0.1351,
+     "mediana_u0": -0.0245,
+     "mediana_p_sym": 0.5306,
+     "decision_maligna": 0.5
+    },
+    {
+     "birads_radiologo": 2,
+     "n": 214,
+     "malignas": 21,
+     "tasa_malignidad": 0.0981,
+     "mediana_u0": 0.8855,
+     "mediana_p_sym": 0.3554,
+     "decision_maligna": 0.1682
+    },
+    {
+     "birads_radiologo": 3,
+     "n": 124,
+     "malignas": 30,
+     "tasa_malignidad": 0.2419,
+     "mediana_u0": 0.3461,
+     "mediana_p_sym": 0.4554,
+     "decision_maligna": 0.3226
+    },
+    {
+     "birads_radiologo": 4,
+     "n": 503,
+     "malignas": 237,
+     "tasa_malignidad": 0.4712,
+     "mediana_u0": -0.0614,
+     "mediana_p_sym": 0.5382,
+     "decision_maligna": 0.5189
+    },
+    {
+     "birads_radiologo": 5,
+     "n": 202,
+     "malignas": 194,
+     "tasa_malignidad": 0.9604,
+     "mediana_u0": -0.4873,
+     "mediana_p_sym": 0.6254,
+     "decision_maligna": 0.7475
+    }
+   ]
+  },
+  "prueba": {
+   "imagenes": 1012,
+   "pacientes": 318,
+   "completas": 368,
+   "recortes": 644,
+   "ambiguas_excluidas": 1,
+   "sin_vinculo": 0,
+   "distribucion_todas": [
+    {
+     "birads_radiologo": 0,
+     "n": 80,
+     "malignas": 13,
+     "tasa_malignidad": 0.1625,
+     "mediana_u0": -0.0944,
+     "mediana_p_sym": 0.545,
+     "decision_maligna": 0.525
+    },
+    {
+     "birads_radiologo": 1,
+     "n": 4,
+     "malignas": 4,
+     "tasa_malignidad": 1.0,
+     "mediana_u0": -0.6465,
+     "mediana_p_sym": 0.6549,
+     "decision_maligna": 1.0
+    },
+    {
+     "birads_radiologo": 2,
+     "n": 83,
+     "malignas": 2,
+     "tasa_malignidad": 0.0241,
+     "mediana_u0": 0.9015,
+     "mediana_p_sym": 0.3527,
+     "decision_maligna": 0.1807
+    },
+    {
+     "birads_radiologo": 3,
+     "n": 149,
+     "malignas": 30,
+     "tasa_malignidad": 0.2013,
+     "mediana_u0": 0.1672,
+     "mediana_p_sym": 0.4913,
+     "decision_maligna": 0.3557
+    },
+    {
+     "birads_radiologo": 4,
+     "n": 510,
+     "malignas": 196,
+     "tasa_malignidad": 0.3843,
+     "mediana_u0": -0.091,
+     "mediana_p_sym": 0.5443,
+     "decision_maligna": 0.5451
+    },
+    {
+     "birads_radiologo": 5,
+     "n": 185,
+     "malignas": 173,
+     "tasa_malignidad": 0.9351,
+     "mediana_u0": -0.6742,
+     "mediana_p_sym": 0.6623,
+     "decision_maligna": 0.827
+    }
+   ]
+  }
+ },
+ "resultados": {
+  "validacion": {
+   "n_imagenes_2a5": 1043,
+   "n_pacientes": 231,
+   "spearman_p_vs_radiologo": {
+    "rho": 0.4998,
+    "ic95": [
+     0.3994,
+     0.5763
+    ]
+   },
+   "spearman_benignas": {
+    "n": 561,
+    "rho": 0.4311,
+    "ic95": [
+     0.2978,
+     0.5285
+    ]
+   },
+   "spearman_malignas": {
+    "n": 482,
+    "rho": 0.2231,
+    "ic95": [
+     0.0774,
+     0.3498
+    ]
+   },
+   "auc_radiologo": {
+    "auc": 0.8019,
+    "ic95": [
+     0.7371,
+     0.8564
+    ]
+   },
+   "auc_formula_mismas_imagenes": {
+    "auc": 0.758,
+    "ic95": [
+     0.7071,
+     0.8033
+    ]
+   },
+   "auc_radiologo_menos_formula": {
+    "dif": 0.0438,
+    "ic95": [
+     -0.0056,
+     0.0892
+    ]
+   },
+   "por_categoria_actual": [
+    {
+     "categoria": "2",
+     "n": 134,
+     "tasa_malignidad": 0.0821,
+     "ic95": [
+      0.0465,
+      0.141
+     ],
+     "rango_ACR": "0 %",
+     "decision_benigna": 134,
+     "decision_maligna": 0
+    },
+    {
+     "categoria": "3",
+     "n": 160,
+     "tasa_malignidad": 0.2625,
+     "ic95": [
+      0.2005,
+      0.3357
+     ],
+     "rango_ACR": "<= 2 %",
+     "decision_benigna": 160,
+     "decision_maligna": 0
+    },
+    {
+     "categoria": "4A",
+     "n": 228,
+     "tasa_malignidad": 0.4167,
+     "ic95": [
+      0.3546,
+      0.4815
+     ],
+     "rango_ACR": "2-10 %",
+     "decision_benigna": 228,
+     "decision_maligna": 0
+    },
+    {
+     "categoria": "4B",
+     "n": 292,
+     "tasa_malignidad": 0.5411,
+     "ic95": [
+      0.4838,
+      0.5973
+     ],
+     "rango_ACR": "10-50 %",
+     "decision_benigna": 33,
+     "decision_maligna": 259
+    },
+    {
+     "categoria": "4C",
+     "n": 196,
+     "tasa_malignidad": 0.7551,
+     "ic95": [
+      0.6904,
+      0.81
+     ],
+     "rango_ACR": "50-95 %",
+     "decision_benigna": 0,
+     "decision_maligna": 196
+    },
+    {
+     "categoria": "5",
+     "n": 33,
+     "tasa_malignidad": 0.8485,
+     "ic95": [
+      0.6908,
+      0.9335
+     ],
+     "rango_ACR": ">= 95 %",
+     "decision_benigna": 0,
+     "decision_maligna": 33
+    }
+   ],
+   "contradicciones_actual": {
+    "decision_benigna_con_categoria_4_o_mas": 293,
+    "decision_maligna_con_categoria_3_o_menos": 0,
+    "n": 1134
+   },
+   "acuerdo_actual": {
+    "kappa_cuadratico": 0.4684,
+    "ic95": [
+     0.3585,
+     0.5526
+    ],
+    "acuerdo_exacto": 0.4966,
+    "tabla": {
+     "herr_2": {
+      "rad_2": 87,
+      "rad_3": 20,
+      "rad_4": 26,
+      "rad_5": 1
+     },
+     "herr_3": {
+      "rad_2": 50,
+      "rad_3": 24,
+      "rad_4": 76,
+      "rad_5": 10
+     },
+     "herr_4": {
+      "rad_2": 77,
+      "rad_3": 79,
+      "rad_4": 388,
+      "rad_5": 172
+     },
+     "herr_5": {
+      "rad_2": 0,
+      "rad_3": 1,
+      "rad_4": 13,
+      "rad_5": 19
+     }
+    }
+   },
+   "radiologo_por_decision": {
+    "benigna": [
+     {
+      "birads_radiologo": 2,
+      "n": 178,
+      "malignas": 12,
+      "tasa_malignidad": 0.0674,
+      "mediana_u0": 1.0635,
+      "mediana_p_sym": 0.3261,
+      "decision_maligna": 0.0
+     },
+     {
+      "birads_radiologo": 3,
+      "n": 84,
+      "malignas": 13,
+      "tasa_malignidad": 0.1548,
+      "mediana_u0": 0.5722,
+      "mediana_p_sym": 0.4117,
+      "decision_maligna": 0.0
+     },
+     {
+      "birads_radiologo": 4,
+      "n": 242,
+      "malignas": 84,
+      "tasa_malignidad": 0.3471,
+      "mediana_u0": 0.4331,
+      "mediana_p_sym": 0.4383,
+      "decision_maligna": 0.0
+     },
+     {
+      "birads_radiologo": 5,
+      "n": 51,
+      "malignas": 49,
+      "tasa_malignidad": 0.9608,
+      "mediana_u0": 0.2527,
+      "mediana_p_sym": 0.474,
+      "decision_maligna": 0.0
+     }
+    ],
+    "maligna": [
+     {
+      "birads_radiologo": 2,
+      "n": 36,
+      "malignas": 9,
+      "tasa_malignidad": 0.25,
+      "mediana_u0": -0.344,
+      "mediana_p_sym": 0.5964,
+      "decision_maligna": 1.0
+     },
+     {
+      "birads_radiologo": 3,
+      "n": 40,
+      "malignas": 17,
+      "tasa_malignidad": 0.425,
+      "mediana_u0": -0.5675,
+      "mediana_p_sym": 0.6414,
+      "decision_maligna": 1.0
+     },
+     {
+      "birads_radiologo": 4,
+      "n": 261,
+      "malignas": 153,
+      "tasa_malignidad": 0.5862,
+      "mediana_u0": -0.5302,
+      "mediana_p_sym": 0.634,
+      "decision_maligna": 1.0
+     },
+     {
+      "birads_radiologo": 5,
+      "n": 151,
+      "malignas": 145,
+      "tasa_malignidad": 0.9603,
+      "mediana_u0": -0.7141,
+      "mediana_p_sym": 0.67,
+      "decision_maligna": 1.0
+     }
+    ]
+   },
+   "sensibilidad_valoracion_max": {
+    "n": 1047,
+    "rho": 0.4983,
+    "auc_radiologo": 0.8011,
+    "auc_formula": 0.7565
+   }
+  },
+  "prueba": {
+   "n_imagenes_2a5": 927,
+   "n_pacientes": 293,
+   "spearman_p_vs_radiologo": {
+    "rho": 0.4493,
+    "ic95": [
+     0.3624,
+     0.5228
+    ]
+   },
+   "spearman_benignas": {
+    "n": 526,
+    "rho": 0.374,
+    "ic95": [
+     0.2606,
+     0.4708
+    ]
+   },
+   "spearman_malignas": {
+    "n": 401,
+    "rho": 0.2915,
+    "ic95": [
+     0.1698,
+     0.4064
+    ]
+   },
+   "auc_radiologo": {
+    "auc": 0.7786,
+    "ic95": [
+     0.7287,
+     0.8261
+    ]
+   },
+   "auc_formula_mismas_imagenes": {
+    "auc": 0.7276,
+    "ic95": [
+     0.6872,
+     0.7695
+    ]
+   },
+   "auc_radiologo_menos_formula": {
+    "dif": 0.051,
+    "ic95": [
+     0.0013,
+     0.1016
+    ]
+   },
+   "por_categoria_actual": [
+    {
+     "categoria": "2",
+     "n": 74,
+     "tasa_malignidad": 0.0811,
+     "ic95": [
+      0.0377,
+      0.1658
+     ],
+     "rango_ACR": "0 %",
+     "decision_benigna": 74,
+     "decision_maligna": 0
+    },
+    {
+     "categoria": "3",
+     "n": 128,
+     "tasa_malignidad": 0.2656,
+     "ic95": [
+      0.1968,
+      0.3482
+     ],
+     "rango_ACR": "<= 2 %",
+     "decision_benigna": 128,
+     "decision_maligna": 0
+    },
+    {
+     "categoria": "4A",
+     "n": 203,
+     "tasa_malignidad": 0.3103,
+     "ic95": [
+      0.2507,
+      0.377
+     ],
+     "rango_ACR": "2-10 %",
+     "decision_benigna": 203,
+     "decision_maligna": 0
+    },
+    {
+     "categoria": "4B",
+     "n": 300,
+     "tasa_malignidad": 0.4733,
+     "ic95": [
+      0.4175,
+      0.5298
+     ],
+     "rango_ACR": "10-50 %",
+     "decision_benigna": 23,
+     "decision_maligna": 277
+    },
+    {
+     "categoria": "4C",
+     "n": 172,
+     "tasa_malignidad": 0.6395,
+     "ic95": [
+      0.5655,
+      0.7075
+     ],
+     "rango_ACR": "50-95 %",
+     "decision_benigna": 0,
+     "decision_maligna": 172
+    },
+    {
+     "categoria": "5",
+     "n": 50,
+     "tasa_malignidad": 0.92,
+     "ic95": [
+      0.8116,
+      0.9685
+     ],
+     "rango_ACR": ">= 95 %",
+     "decision_benigna": 0,
+     "decision_maligna": 50
+    }
+   ],
+   "contradicciones_actual": {
+    "decision_benigna_con_categoria_4_o_mas": 259,
+    "decision_maligna_con_categoria_3_o_menos": 0,
+    "n": 1012
+   },
+   "acuerdo_actual": {
+    "kappa_cuadratico": 0.4185,
+    "ic95": [
+     0.3284,
+     0.4979
+    ],
+    "acuerdo_exacto": 0.5415,
+    "tabla": {
+     "herr_2": {
+      "rad_2": 34,
+      "rad_3": 18,
+      "rad_4": 20,
+      "rad_5": 2
+     },
+     "herr_3": {
+      "rad_2": 19,
+      "rad_3": 32,
+      "rad_4": 70,
+      "rad_5": 7
+     },
+     "herr_4": {
+      "rad_2": 29,
+      "rad_3": 96,
+      "rad_4": 405,
+      "rad_5": 145
+     },
+     "herr_5": {
+      "rad_2": 1,
+      "rad_3": 3,
+      "rad_4": 15,
+      "rad_5": 31
+     }
+    }
+   },
+   "radiologo_por_decision": {
+    "benigna": [
+     {
+      "birads_radiologo": 2,
+      "n": 68,
+      "malignas": 0,
+      "tasa_malignidad": 0.0,
+      "mediana_u0": 1.099,
+      "mediana_p_sym": 0.3205,
+      "decision_maligna": 0.0
+     },
+     {
+      "birads_radiologo": 3,
+      "n": 96,
+      "malignas": 11,
+      "tasa_malignidad": 0.1146,
+      "mediana_u0": 0.5759,
+      "mediana_p_sym": 0.411,
+      "decision_maligna": 0.0
+     },
+     {
+      "birads_radiologo": 4,
+      "n": 232,
+      "malignas": 71,
+      "tasa_malignidad": 0.306,
+      "mediana_u0": 0.393,
+      "mediana_p_sym": 0.4461,
+      "decision_maligna": 0.0
+     },
+     {
+      "birads_radiologo": 5,
+      "n": 32,
+      "malignas": 28,
+      "tasa_malignidad": 0.875,
+      "mediana_u0": 0.3155,
+      "mediana_p_sym": 0.4614,
+      "decision_maligna": 0.0
+     }
+    ],
+    "maligna": [
+     {
+      "birads_radiologo": 2,
+      "n": 15,
+      "malignas": 2,
+      "tasa_malignidad": 0.1333,
+      "mediana_u0": -0.3788,
+      "mediana_p_sym": 0.6035,
+      "decision_maligna": 1.0
+     },
+     {
+      "birads_radiologo": 3,
+      "n": 53,
+      "malignas": 19,
+      "tasa_malignidad": 0.3585,
+      "mediana_u0": -0.4535,
+      "mediana_p_sym": 0.6186,
+      "decision_maligna": 1.0
+     },
+     {
+      "birads_radiologo": 4,
+      "n": 278,
+      "malignas": 125,
+      "tasa_malignidad": 0.4496,
+      "mediana_u0": -0.4339,
+      "mediana_p_sym": 0.6147,
+      "decision_maligna": 1.0
+     },
+     {
+      "birads_radiologo": 5,
+      "n": 153,
+      "malignas": 145,
+      "tasa_malignidad": 0.9477,
+      "mediana_u0": -0.7734,
+      "mediana_p_sym": 0.6812,
+      "decision_maligna": 1.0
+     }
+    ]
+   },
+   "sensibilidad_valoracion_max": {
+    "n": 928,
+    "rho": 0.4463,
+    "auc_radiologo": 0.7789,
+    "auc_formula": 0.7264
+   }
+  },
+  "combinacion_radiologo_u0": {
+   "coef_birads": 1.2663,
+   "coef_u0": -0.8024,
+   "auc_prueba": 0.8149,
+   "ic95": [
+    0.7707,
+    0.8578
+   ],
+   "dif_vs_radiologo": 0.0363,
+   "dif_ic95": [
+    0.016,
+    0.0593
+   ]
+  },
+  "cortes_alternativos": {
+   "anclado_en_tau_kappa_max": {
+    "cortes_p_sym": [
+     0.3572,
+     0.5324,
+     0.6761
+    ],
+    "kappa_validacion": 0.4782,
+    "acuerdo_prueba": {
+     "kappa_cuadratico": 0.439,
+     "ic95": [
+      0.3542,
+      0.5145
+     ],
+     "acuerdo_exacto": 0.4261,
+     "tabla": {
+      "herr_2": {
+       "rad_2": 44,
+       "rad_3": 33,
+       "rad_4": 36,
+       "rad_5": 3
+      },
+      "herr_3": {
+       "rad_2": 24,
+       "rad_3": 63,
+       "rad_4": 196,
+       "rad_5": 29
+      },
+      "herr_4": {
+       "rad_2": 13,
+       "rad_3": 42,
+       "rad_4": 209,
+       "rad_5": 74
+      },
+      "herr_5": {
+       "rad_2": 2,
+       "rad_3": 11,
+       "rad_4": 69,
+       "rad_5": 79
+      }
+     }
+    },
+    "por_categoria_prueba": [
+     {
+      "categoria": "2",
+      "n": 116,
+      "tasa_malignidad": 0.1121,
+      "ic95": [
+       0.0667,
+       0.1823
+      ],
+      "rango_ACR": "0 %",
+      "decision_benigna": 116,
+      "decision_maligna": 0
+     },
+     {
+      "categoria": "3",
+      "n": 312,
+      "tasa_malignidad": 0.3109,
+      "ic95": [
+       0.2621,
+       0.3643
+      ],
+      "rango_ACR": "<= 2 %",
+      "decision_benigna": 312,
+      "decision_maligna": 0
+     },
+     {
+      "categoria": "4",
+      "n": 338,
+      "tasa_malignidad": 0.5148,
+      "ic95": [
+       0.4616,
+       0.5676
+      ],
+      "rango_ACR": "2-95 %",
+      "decision_benigna": 0,
+      "decision_maligna": 338
+     },
+     {
+      "categoria": "5",
+      "n": 161,
+      "tasa_malignidad": 0.7267,
+      "ic95": [
+       0.6532,
+       0.7897
+      ],
+      "rango_ACR": ">= 95 %",
+      "decision_benigna": 0,
+      "decision_maligna": 161
+     }
+    ],
+    "contradicciones_prueba": {
+     "decision_benigna_con_categoria_4_o_mas": 0,
+     "decision_maligna_con_categoria_3_o_menos": 0,
+     "n": 1012
+    }
+   },
+   "libre_kappa_max": {
+    "cortes_p_sym": [
+     0.3591,
+     0.4593,
+     0.6831
+    ],
+    "kappa_validacion": 0.5162,
+    "acuerdo_prueba": {
+     "kappa_cuadratico": 0.4606,
+     "ic95": [
+      0.3724,
+      0.5324
+     ],
+     "acuerdo_exacto": 0.5092,
+     "tabla": {
+      "herr_2": {
+       "rad_2": 44,
+       "rad_3": 33,
+       "rad_4": 37,
+       "rad_5": 3
+      },
+      "herr_3": {
+       "rad_2": 15,
+       "rad_3": 33,
+       "rad_4": 95,
+       "rad_5": 12
+      },
+      "herr_4": {
+       "rad_2": 22,
+       "rad_3": 73,
+       "rad_4": 319,
+       "rad_5": 94
+      },
+      "herr_5": {
+       "rad_2": 2,
+       "rad_3": 10,
+       "rad_4": 59,
+       "rad_5": 76
+      }
+     }
+    },
+    "por_categoria_prueba": [
+     {
+      "categoria": "2",
+      "n": 117,
+      "tasa_malignidad": 0.1197,
+      "ic95": [
+       0.0726,
+       0.1909
+      ],
+      "rango_ACR": "0 %",
+      "decision_benigna": 117,
+      "decision_maligna": 0
+     },
+     {
+      "categoria": "3",
+      "n": 155,
+      "tasa_malignidad": 0.2839,
+      "ic95": [
+       0.2188,
+       0.3594
+      ],
+      "rango_ACR": "<= 2 %",
+      "decision_benigna": 155,
+      "decision_maligna": 0
+     },
+     {
+      "categoria": "4",
+      "n": 508,
+      "tasa_malignidad": 0.4626,
+      "ic95": [
+       0.4197,
+       0.5061
+      ],
+      "rango_ACR": "2-95 %",
+      "decision_benigna": 156,
+      "decision_maligna": 352
+     },
+     {
+      "categoria": "5",
+      "n": 147,
+      "tasa_malignidad": 0.7347,
+      "ic95": [
+       0.658,
+       0.7994
+      ],
+      "rango_ACR": ">= 95 %",
+      "decision_benigna": 0,
+      "decision_maligna": 147
+     }
+    ],
+    "contradicciones_prueba": {
+     "decision_benigna_con_categoria_4_o_mas": 175,
+     "decision_maligna_con_categoria_3_o_menos": 0,
+     "n": 1012
+    }
+   },
+   "calibracion_isotonica_rangos_ACR": {
+    "prob_calibrada_min_max_validacion": [
+     0.0,
+     1.0
+    ],
+    "por_categoria_prueba": [
+     {
+      "categoria": "2",
+      "n": 4,
+      "tasa_malignidad": 0.0,
+      "ic95": [
+       0.0,
+       0.4899
+      ],
+      "rango_ACR": "0 %",
+      "decision_benigna": 4,
+      "decision_maligna": 0
+     },
+     {
+      "categoria": "3",
+      "n": 1,
+      "tasa_malignidad": 0.0,
+      "ic95": [
+       0.0,
+       0.7935
+      ],
+      "rango_ACR": "<= 2 %",
+      "decision_benigna": 1,
+      "decision_maligna": 0
+     },
+     {
+      "categoria": "4A",
+      "n": 37,
+      "tasa_malignidad": 0.0811,
+      "ic95": [
+       0.028,
+       0.213
+      ],
+      "rango_ACR": "2-10 %",
+      "decision_benigna": 37,
+      "decision_maligna": 0
+     },
+     {
+      "categoria": "4B",
+      "n": 493,
+      "tasa_malignidad": 0.2901,
+      "ic95": [
+       0.2517,
+       0.3316
+      ],
+      "rango_ACR": "10-50 %",
+      "decision_benigna": 424,
+      "decision_maligna": 69
+     },
+     {
+      "categoria": "4C",
+      "n": 476,
+      "tasa_malignidad": 0.5693,
+      "ic95": [
+       0.5245,
+       0.6131
+      ],
+      "rango_ACR": "50-95 %",
+      "decision_benigna": 0,
+      "decision_maligna": 476
+     },
+     {
+      "categoria": "5",
+      "n": 1,
+      "tasa_malignidad": 1.0,
+      "ic95": [
+       0.2065,
+       1.0
+      ],
+      "rango_ACR": ">= 95 %",
+      "decision_benigna": 0,
+      "decision_maligna": 1
+     }
+    ],
+    "prob_calibrada_en_tau": 0.45
+   }
+  },
+  "sensibilidad_solo_biopsia": {
+   "n_prueba": 804,
+   "pacientes": 266,
+   "excluidas_sin_biopsia_prueba": 123,
+   "distribucion_prueba": [
+    {
+     "birads_radiologo": 2,
+     "n": 9,
+     "malignas": 2,
+     "tasa_malignidad": 0.2222,
+     "mediana_u0": -0.6119,
+     "mediana_p_sym": 0.6501,
+     "decision_maligna": 0.7778
+    },
+    {
+     "birads_radiologo": 3,
+     "n": 108,
+     "malignas": 30,
+     "tasa_malignidad": 0.2778,
+     "mediana_u0": 0.0736,
+     "mediana_p_sym": 0.5104,
+     "decision_maligna": 0.4167
+    },
+    {
+     "birads_radiologo": 4,
+     "n": 502,
+     "malignas": 196,
+     "tasa_malignidad": 0.3904,
+     "mediana_u0": -0.0921,
+     "mediana_p_sym": 0.5445,
+     "decision_maligna": 0.5458
+    },
+    {
+     "birads_radiologo": 5,
+     "n": 185,
+     "malignas": 173,
+     "tasa_malignidad": 0.9351,
+     "mediana_u0": -0.6742,
+     "mediana_p_sym": 0.6623,
+     "decision_maligna": 0.827
+    }
+   ],
+   "rho": 0.3272,
+   "rho_ic95": [
+    0.24,
+    0.4096
+   ],
+   "auc_radiologo": 0.7222,
+   "auc_formula": 0.6843,
+   "dif": 0.0379,
+   "dif_ic95": [
+    -0.0211,
+    0.1007
+   ],
+   "auc_combinacion": 0.7636,
+   "comb_menos_radiologo": 0.0413,
+   "comb_menos_radiologo_ic95": [
+    0.0123,
+    0.0714
+   ]
+  }
+ }
+}

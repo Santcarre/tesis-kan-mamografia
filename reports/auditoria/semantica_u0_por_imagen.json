@@ -1,0 +1,208 @@
+{
+  "descripcion": "u0 frente a descriptores BI-RADS con vinculo por imagen (ver docstring)",
+  "n_imagenes": 1012,
+  "n_pacientes": 318,
+  "vinculo": {
+    "mamografias_completas": 368,
+    "recortes": 644,
+    "imagenes_completas_ambiguas_margen": 4
+  },
+  "comparacion_con_asignacion_por_paciente": {
+    "imagenes_en_prueba_de_margen_antes": 489,
+    "con_descriptor_de_otra_lesion": 52,
+    "de_ellas_calcificaciones": 6,
+    "imagenes_en_prueba_de_forma_antes": 451,
+    "forma_de_otra_lesion": 43
+  },
+  "holm_familia": [
+    "u0_pathology",
+    "u0_margins",
+    "u0_shapes",
+    "u0_calc",
+    "u0_density",
+    "ch191_pathology",
+    "ch64_pathology",
+    "ch264_pathology",
+    "ch279_pathology",
+    "ch112_pathology",
+    "ch69_pathology",
+    "ch305_pathology",
+    "ch251_pathology",
+    "ch100_pathology",
+    "ch53_pathology"
+  ],
+  "tests": {
+    "u0_pathology": {
+      "U": 69893.0,
+      "p_raw": 2.1477484845215372e-32,
+      "n1": 418,
+      "n0": 594,
+      "d": -0.83,
+      "r_rb": 0.437,
+      "mean1": -0.4345,
+      "mean0": 0.1941,
+      "p_holm": 3.2216227267823057e-31
+    },
+    "u0_margins": {
+      "H": 53.0779,
+      "p_raw": 2.9803731119906255e-12,
+      "n": 461,
+      "k": 3,
+      "n_por_grupo": {
+        "CIRCUMSCRIBED": 125,
+        "ILL_DEFINED": 182,
+        "SPICULATED": 154
+      },
+      "epsilon2": 0.1154,
+      "p_holm": 3.874485045587813e-11
+    },
+    "u0_shapes": {
+      "H": 64.1337,
+      "p_raw": 1.184538878085999e-14,
+      "n": 451,
+      "k": 3,
+      "n_por_grupo": {
+        "ROUND": 64,
+        "OVAL": 167,
+        "IRREGULAR": 220
+      },
+      "epsilon2": 0.1425,
+      "p_holm": 1.6583544293203984e-13
+    },
+    "u0_calc": {
+      "U": 517.0,
+      "p_raw": 0.254852768875538,
+      "n1": 79,
+      "n0": 16,
+      "d": -0.265,
+      "r_rb": 0.182,
+      "mean1": -0.128,
+      "mean0": 0.047,
+      "p_holm": 1.0
+    },
+    "u0_density": {
+      "H": 2.1859,
+      "p_raw": 0.5347286778695144,
+      "n": 1010,
+      "k": 4,
+      "n_por_grupo": {
+        "1": 115,
+        "2": 428,
+        "3": 318,
+        "4": 149
+      },
+      "epsilon2": 0.0022,
+      "p_holm": 1.0
+    },
+    "ch191_pathology": {
+      "U": 105348.5,
+      "p_raw": 4.029927484783751e-05,
+      "n1": 418,
+      "n0": 594,
+      "d": -0.255,
+      "r_rb": 0.1514,
+      "mean1": 0.6509,
+      "mean0": 0.7769,
+      "p_holm": 0.00048359129817405013
+    },
+    "ch64_pathology": {
+      "U": 122101.5,
+      "p_raw": 0.6552627362596501,
+      "n1": 418,
+      "n0": 594,
+      "d": -0.022,
+      "r_rb": 0.0165,
+      "mean1": 0.8318,
+      "mean0": 0.8446,
+      "p_holm": 1.0
+    },
+    "ch264_pathology": {
+      "U": 127993.5,
+      "p_raw": 0.40074798206946904,
+      "n1": 418,
+      "n0": 594,
+      "d": 0.119,
+      "r_rb": -0.031,
+      "mean1": 0.8008,
+      "mean0": 0.7168,
+      "p_holm": 1.0
+    },
+    "ch279_pathology": {
+      "U": 118791.0,
+      "p_raw": 0.24217687152265732,
+      "n1": 418,
+      "n0": 594,
+      "d": -0.044,
+      "r_rb": 0.0431,
+      "mean1": 0.595,
+      "mean0": 0.6167,
+      "p_holm": 1.0
+    },
+    "ch112_pathology": {
+      "U": 125907.5,
+      "p_raw": 0.7004978372399331,
+      "n1": 418,
+      "n0": 594,
+      "d": 0.087,
+      "r_rb": -0.0142,
+      "mean1": 0.8256,
+      "mean0": 0.7721,
+      "p_holm": 1.0
+    },
+    "ch69_pathology": {
+      "U": 121300.5,
+      "p_raw": 0.5343216991328339,
+      "n1": 418,
+      "n0": 594,
+      "d": -0.032,
+      "r_rb": 0.0229,
+      "mean1": 0.6252,
+      "mean0": 0.6426,
+      "p_holm": 1.0
+    },
+    "ch305_pathology": {
+      "U": 135124.5,
+      "p_raw": 0.01649014439042643,
+      "n1": 418,
+      "n0": 594,
+      "d": 0.17,
+      "r_rb": -0.0884,
+      "mean1": 0.8065,
+      "mean0": 0.7182,
+      "p_holm": 0.14841129951383786
+    },
+    "ch251_pathology": {
+      "U": 140433.0,
+      "p_raw": 0.00037454627194276465,
+      "n1": 418,
+      "n0": 594,
+      "d": 0.245,
+      "r_rb": -0.1312,
+      "mean1": 0.9733,
+      "mean0": 0.8256,
+      "p_holm": 0.0037454627194276465
+    },
+    "ch100_pathology": {
+      "U": 141439.0,
+      "p_raw": 0.00015864257724675028,
+      "n1": 418,
+      "n0": 594,
+      "d": 0.278,
+      "r_rb": -0.1393,
+      "mean1": 1.0491,
+      "mean0": 0.8801,
+      "p_holm": 0.001745068349714253
+    },
+    "ch53_pathology": {
+      "U": 118842.0,
+      "p_raw": 0.24669135906489037,
+      "n1": 418,
+      "n0": 594,
+      "d": -0.047,
+      "r_rb": 0.0427,
+      "mean1": 0.6317,
+      "mean0": 0.6535,
+      "p_holm": 1.0
+    }
+  }
+}

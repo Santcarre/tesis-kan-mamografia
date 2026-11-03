@@ -1,0 +1,32 @@
+# Dependencias del proyecto (versiones mínimas probadas).
+# Instale antes torch y torchvision con la variante que corresponda a su equipo (CPU o CUDA):
+#   https://pytorch.org/get-started/locally/
+# El entorno exacto de los experimentos está en requirements-lock.txt (solo para consulta).
+torch>=2.4
+torchvision>=0.19
+pykan==0.2.8          # la API de pykan cambia entre versiones: se fija la usada en la tesis
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+pandas>=2.1
+sympy>=1.12
+pillow>=10.0
+matplotlib>=3.8
+seaborn>=0.13
+tqdm>=4.66
+pydicom>=2.4          # lectura de DICOM en la estación y en los cuadernos
+reportlab>=4.0        # informes PDF
+requests>=2.31
+openpyxl>=3.1         # planilla de validación del estudio de informes (.xlsx)
+# Estación Prometeo (desktop_app): servidor local y pruebas
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.5
+python-multipart>=0.0.9   # subida de imágenes en el estudio externo
+httpx>=0.27           # cliente de pruebas de FastAPI (con Python 3.11+ Starlette prefiere httpx2)
+pytest>=8.0
+pytest-asyncio>=0.23
+# La ventana de escritorio usa Electron (Node.js 18+): se instala con `npm install` en desktop_app/electron
+# Cuadernos
+jupyter>=1.0
+ipykernel>=6.29

@@ -1,0 +1,170 @@
+{
+  "descripcion": "u0 frente a margen y forma dentro de cada clase (ver docstring)",
+  "n_imagenes": 1012,
+  "holm_familia": [
+    "margen_malignas",
+    "forma_malignas",
+    "margen_benignas",
+    "forma_benignas",
+    "margen_ajustado_por_patologia",
+    "forma_ajustada_por_patologia"
+  ],
+  "tests": {
+    "margen_malignas": {
+      "H": 8.8906,
+      "p_raw": 0.011733681012899932,
+      "n": 230,
+      "n_por_grupo": {
+        "CIRCUMSCRIBED": 26,
+        "ILL_DEFINED": 92,
+        "SPICULATED": 112
+      },
+      "mediana_u0_por_grupo": {
+        "CIRCUMSCRIBED": -0.3161,
+        "ILL_DEFINED": -0.3798,
+        "SPICULATED": -0.6813
+      },
+      "epsilon2": 0.0388,
+      "p_holm": 0.023467362025799864
+    },
+    "forma_malignas": {
+      "H": 13.0399,
+      "p_raw": 0.001473740347367679,
+      "n": 210,
+      "n_por_grupo": {
+        "ROUND": 16,
+        "OVAL": 32,
+        "IRREGULAR": 162
+      },
+      "mediana_u0_por_grupo": {
+        "ROUND": -0.1981,
+        "OVAL": -0.3206,
+        "IRREGULAR": -0.5731
+      },
+      "epsilon2": 0.0624,
+      "p_holm": 0.005894961389470716
+    },
+    "margen_benignas": {
+      "H": 12.4405,
+      "p_raw": 0.001988757571192654,
+      "n": 231,
+      "n_por_grupo": {
+        "CIRCUMSCRIBED": 99,
+        "ILL_DEFINED": 90,
+        "SPICULATED": 42
+      },
+      "mediana_u0_por_grupo": {
+        "CIRCUMSCRIBED": 0.2221,
+        "ILL_DEFINED": -0.0517,
+        "SPICULATED": -0.0776
+      },
+      "epsilon2": 0.0541,
+      "p_holm": 0.005966272713577961
+    },
+    "forma_benignas": {
+      "H": 8.3461,
+      "p_raw": 0.015405467146351564,
+      "n": 241,
+      "n_por_grupo": {
+        "ROUND": 48,
+        "OVAL": 135,
+        "IRREGULAR": 58
+      },
+      "mediana_u0_por_grupo": {
+        "ROUND": 0.1562,
+        "OVAL": 0.2052,
+        "IRREGULAR": -0.0525
+      },
+      "epsilon2": 0.0348,
+      "p_holm": 0.023467362025799864
+    },
+    "margen_ajustado_por_patologia": {
+      "F": 11.0214,
+      "gl": [
+        2,
+        457
+      ],
+      "p_raw": 2.1151164832204202e-05,
+      "n": 461,
+      "R2_parcial": 0.046,
+      "p_holm": 0.0001269069889932252
+    },
+    "forma_ajustada_por_patologia": {
+      "F": 10.688,
+      "gl": [
+        2,
+        447
+      ],
+      "p_raw": 2.9230136598294592e-05,
+      "n": 451,
+      "R2_parcial": 0.0456,
+      "p_holm": 0.00014615068299147295
+    }
+  },
+  "sensibilidad_una_observacion_por_paciente": {
+    "margen_malignas_por_paciente": {
+      "H": 5.4328,
+      "p_raw": 0.06611075672251744,
+      "n": 73,
+      "n_por_grupo": {
+        "CIRCUMSCRIBED": 8,
+        "ILL_DEFINED": 30,
+        "SPICULATED": 35
+      },
+      "mediana_u0_por_grupo": {
+        "CIRCUMSCRIBED": -0.2133,
+        "ILL_DEFINED": -0.3752,
+        "SPICULATED": -0.5587
+      },
+      "epsilon2": 0.0755
+    },
+    "margen_benignas_por_paciente": {
+      "H": 4.8459,
+      "p_raw": 0.08866108990417812,
+      "n": 70,
+      "n_por_grupo": {
+        "CIRCUMSCRIBED": 29,
+        "ILL_DEFINED": 29,
+        "SPICULATED": 12
+      },
+      "mediana_u0_por_grupo": {
+        "CIRCUMSCRIBED": 0.2941,
+        "ILL_DEFINED": -0.0596,
+        "SPICULATED": -0.0173
+      },
+      "epsilon2": 0.0702
+    },
+    "forma_malignas_por_paciente": {
+      "H": 6.1202,
+      "p_raw": 0.0468825310842971,
+      "n": 67,
+      "n_por_grupo": {
+        "ROUND": 6,
+        "OVAL": 11,
+        "IRREGULAR": 50
+      },
+      "mediana_u0_por_grupo": {
+        "ROUND": -0.1824,
+        "OVAL": -0.2856,
+        "IRREGULAR": -0.5613
+      },
+      "epsilon2": 0.0927
+    },
+    "forma_benignas_por_paciente": {
+      "H": 6.1274,
+      "p_raw": 0.046714614631273785,
+      "n": 75,
+      "n_por_grupo": {
+        "ROUND": 16,
+        "OVAL": 42,
+        "IRREGULAR": 17
+      },
+      "mediana_u0_por_grupo": {
+        "ROUND": 0.2362,
+        "OVAL": 0.2056,
+        "IRREGULAR": -0.0685
+      },
+      "epsilon2": 0.0828
+    }
+  }
+}

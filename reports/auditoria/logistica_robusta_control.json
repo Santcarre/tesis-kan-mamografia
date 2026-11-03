@@ -1,0 +1,133 @@
+{
+  "modelo": "LogisticRegression(C=0.01) sobre GAP-512 estandarizado del extractor robusto (f2robust), sin pesos de clase",
+  "semilla_bootstrap": 0,
+  "B": 2000,
+  "n_test": 1012,
+  "logistica": {
+    "auc_val": 0.7423,
+    "auc_test": 0.7161,
+    "umbral_youden_prob": 0.3661,
+    "sens_test": 0.7033,
+    "spec_test": 0.6128,
+    "n_coef": 513
+  },
+  "delong_frente_a_formula": {
+    "Logistica_robusta_C0.01": {
+      "auc_a": 0.7161,
+      "auc_b": 0.7185,
+      "delta": -0.0024,
+      "var_a": 0.000259497029959405,
+      "var_b": 0.00026004531931233214,
+      "cov_ab": 0.0002492428937460262,
+      "var_delta": 2.105656177968482e-05,
+      "se_delta": 0.00459,
+      "ic95_delta": [
+        -0.0114,
+        0.0066
+      ],
+      "z": -0.524,
+      "p": 0.6003
+    },
+    "Robusto": {
+      "auc_a": 0.7219,
+      "auc_b": 0.7185,
+      "delta": 0.0034,
+      "var_a": 0.00025686556521410827,
+      "var_b": 0.00026004531931233214,
+      "cov_ab": 0.00023938746347938684,
+      "var_delta": 3.8135957567666666e-05,
+      "se_delta": 0.00618,
+      "ic95_delta": [
+        -0.0087,
+        0.0155
+      ],
+      "z": 0.554,
+      "p": 0.5798
+    },
+    "Baseline_FC": {
+      "auc_a": 0.7325,
+      "auc_b": 0.7185,
+      "delta": 0.014,
+      "var_a": 0.00025003516802922754,
+      "var_b": 0.00026004531931233214,
+      "cov_ab": 0.00013342960712491427,
+      "var_delta": 0.00024322127309173115,
+      "se_delta": 0.0156,
+      "ic95_delta": [
+        -0.0166,
+        0.0446
+      ],
+      "z": 0.898,
+      "p": 0.3689
+    }
+  },
+  "calibracion": {
+    "Baseline_FC": {
+      "brier": 0.2445,
+      "ece_deciles": 0.1848,
+      "ece_uniforme": 0.1894
+    },
+    "Robusto": {
+      "brier": 0.2131,
+      "ece_deciles": 0.0768,
+      "ece_uniforme": 0.0802
+    },
+    "R3_formula": {
+      "brier": 0.2252,
+      "ece_deciles": 0.1274,
+      "ece_uniforme": 0.1311
+    },
+    "Logistica_robusta_C0.01": {
+      "brier": 0.2412,
+      "ece_deciles": 0.1577,
+      "ece_uniforme": 0.1633
+    }
+  },
+  "bootstrap_por_paciente": {
+    "n_pacientes": 318,
+    "auc_ic95": {
+      "Baseline_FC": [
+        0.6892,
+        0.7739
+      ],
+      "Robusto": [
+        0.6791,
+        0.7618
+      ],
+      "R3_formula": [
+        0.6741,
+        0.7591
+      ],
+      "Logistica_robusta_C0.01": [
+        0.6726,
+        0.7553
+      ]
+    },
+    "delta_menos_formula": {
+      "Baseline_FC": {
+        "media": 0.0145,
+        "ic95": [
+          -0.0203,
+          0.051
+        ],
+        "p_bilateral": 0.439
+      },
+      "Robusto": {
+        "media": 0.0035,
+        "ic95": [
+          -0.0095,
+          0.0166
+        ],
+        "p_bilateral": 0.594
+      },
+      "Logistica_robusta_C0.01": {
+        "media": -0.0022,
+        "ic95": [
+          -0.0117,
+          0.0075
+        ],
+        "p_bilateral": 0.621
+      }
+    }
+  }
+}

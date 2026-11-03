@@ -1,0 +1,490 @@
+{
+ "generado": "2026-11-02",
+ "generado_con": "scripts/generar_datos_ui.py",
+ "formula": {
+  "f_ben": [
+   {
+    "k": "lin",
+    "a": 0.0471891401526251
+   },
+   {
+    "k": "cos",
+    "a": 0.328273892402649,
+    "w": 0.214169642965341,
+    "p": -2.33565497672423
+   },
+   {
+    "k": "cos",
+    "a": 0.336114823818207,
+    "w": 0.274644437716577,
+    "p": 3.59239355625278
+   },
+   {
+    "k": "cos",
+    "a": 0.349621593952179,
+    "w": 0.314384453987867,
+    "p": -6.70736043138517
+   },
+   {
+    "k": "cos",
+    "a": 0.385232597589493,
+    "w": 0.350673697391121,
+    "p": 3.69334876906847
+   },
+   {
+    "k": "cos",
+    "a": 0.381856471300125,
+    "w": 0.354226147711424,
+    "p": 5.92455551636943
+   },
+   {
+    "k": "const",
+    "a": 0.259875884173518
+   }
+  ],
+  "f_mal": [
+   {
+    "k": "lin",
+    "a": -0.320272325390727
+   },
+   {
+    "k": "sin",
+    "a": 0.34225144982338,
+    "w": 0.32903093975628,
+    "p": -2.08868830700881
+   },
+   {
+    "k": "sin",
+    "a": 0.175986140966415,
+    "w": 0.370365415273934,
+    "p": 8.44352602817863
+   },
+   {
+    "k": "cos",
+    "a": 0.283501774072647,
+    "w": 0.300271759027153,
+    "p": 7.10500282872347
+   },
+   {
+    "k": "cos",
+    "a": 0.362019270658493,
+    "w": 0.332756501225072,
+    "p": -3.46045717846679
+   },
+   {
+    "k": "cos",
+    "a": 0.306373566389084,
+    "w": 0.353347587136186,
+    "p": -9.53764778569112
+   },
+   {
+    "k": "const",
+    "a": 0.786598895731083
+   }
+  ],
+  "expr_ben": "0.0471891401526251*x_1 + 0.328273892402649*cos(0.214169642965341*x_1 - 2.33565497672423) + 0.336114823818207*cos(0.274644437716577*x_1 + 3.59239355625278) + 0.349621593952179*cos(0.314384453987867*x_1 - 6.70736043138517) + 0.385232597589493*cos(0.350673697391121*x_1 + 3.69334876906847) + 0.381856471300125*cos(0.354226147711424*x_1 + 5.92455551636943) + 0.259875884173518",
+  "expr_mal": "-0.320272325390727*x_1 + 0.34225144982338*sin(0.32903093975628*x_1 - 2.08868830700881) + 0.175986140966415*sin(0.370365415273934*x_1 + 8.44352602817863) + 0.283501774072647*cos(0.300271759027153*x_1 + 7.10500282872347) + 0.362019270658493*cos(0.332756501225072*x_1 - 3.46045717846679) + 0.306373566389084*cos(0.353347587136186*x_1 - 9.53764778569112) + 0.786598895731083",
+  "caracteres": 749,
+  "variables": 1,
+  "tau_logit": 0.1296,
+  "tau_prob": 0.5324,
+  "u0_soporte": [
+   -3.2111,
+   3.0517
+  ],
+  "u0_umbral": -0.0331,
+  "sup_gprima": 0.8798,
+  "estrictamente_decreciente": true,
+  "gprima_rango_soporte": [
+   -0.8798,
+   -0.4449
+  ],
+  "reductor": "S-PCA64 SupervisedPCAReducer D->64 + PCA64 (fit solo train, best_val_auc)",
+  "kan": "[64,32,2] grid=3 k=3 top_k=12"
+ },
+ "poblacion": {
+  "n": 1012,
+  "n_mal": 418,
+  "n_ben": 594,
+  "u0_media_mal": -0.4345,
+  "u0_media_ben": 0.1941,
+  "confusion": {
+   "tp": 303,
+   "fp": 243,
+   "tn": 351,
+   "fn": 115
+  },
+  "sens": 0.7249,
+  "esp": 0.5909
+ },
+ "auc": {
+  "formula": {
+   "auc": 0.7185,
+   "ic95_imagen": [
+    0.6873,
+    0.7487
+   ],
+   "ic95_paciente": [
+    0.6741,
+    0.7591
+   ]
+  },
+  "red_robusta": {
+   "auc": 0.7219,
+   "ic95_imagen": [
+    0.6904,
+    0.7518
+   ],
+   "ic95_paciente": [
+    0.6791,
+    0.7618
+   ]
+  },
+  "baseline": {
+   "auc": 0.7325,
+   "ic95_imagen": [
+    0.7017,
+    0.763
+   ],
+   "ic95_paciente": [
+    0.6892,
+    0.7739
+   ]
+  },
+  "logistica_u0": 0.7185,
+  "n_pacientes": 318,
+  "delta_baseline_menos_formula": {
+   "media": 0.0145,
+   "ic95": [
+    -0.0203,
+    0.051
+   ],
+   "p_bilateral": 0.439
+  }
+ },
+ "red_robusta": {
+  "sens_youden_propio": 0.6077,
+  "esp_youden_propio": 0.7205
+ },
+ "multisemilla": {
+  "fuente": "reports/27_spca_robust_comparison.json (la tabla del Capítulo 4, §4.2)",
+  "robusto_spca": {
+   "auc": 0.717,
+   "sd": 0.0021,
+   "auc_red_kan": 0.7083,
+   "sd_red_kan": 0.0047,
+   "sens": 0.7445,
+   "sens_sd": 0.0314,
+   "esp": 0.5872,
+   "esp_sd": 0.0271,
+   "vars": 1.4,
+   "chars": 655.4,
+   "semillas": [
+    {
+     "semilla": 42,
+     "auc": 0.7165,
+     "vars": 2
+    },
+    {
+     "semilla": 123,
+     "auc": 0.7182,
+     "vars": 1
+    },
+    {
+     "semilla": 7,
+     "auc": 0.7136,
+     "vars": 2
+    },
+    {
+     "semilla": 2026,
+     "auc": 0.719,
+     "vars": 1
+    },
+    {
+     "semilla": 999,
+     "auc": 0.7179,
+     "vars": 1
+    }
+   ]
+  },
+  "base_spca": {
+   "auc": 0.729,
+   "sd": 0.0019
+  },
+  "robusto_pca_ciego": {
+   "auc": 0.6718,
+   "sd": 0.0102
+  },
+  "corrida_indice": {
+   "fuente": "reports/experiments/r3_spca64_multiseed.json (la que lista CANONICAL_RESULTS.md)",
+   "auc": 0.7149,
+   "sd": 0.005,
+   "semillas": [
+    {
+     "semilla": 42,
+     "auc": 0.7185
+    },
+    {
+     "semilla": 123,
+     "auc": 0.7181
+    },
+    {
+     "semilla": 7,
+     "auc": 0.7178
+    },
+    {
+     "semilla": 2026,
+     "auc": 0.707
+    },
+    {
+     "semilla": 999,
+     "auc": 0.7129
+    }
+   ]
+  }
+ },
+ "extractor_semillas": {
+  "corridas": [
+   {
+    "semilla": 1,
+    "auc_red": 0.7059,
+    "auc_u0": 0.6939,
+    "sens": 0.7177,
+    "esp": 0.5269
+   },
+   {
+    "semilla": 2,
+    "auc_red": 0.6998,
+    "auc_u0": 0.7105,
+    "sens": 0.6675,
+    "esp": 0.6263
+   },
+   {
+    "semilla": 3,
+    "auc_red": 0.715,
+    "auc_u0": 0.7135,
+    "sens": 0.8014,
+    "esp": 0.4882
+   }
+  ],
+  "resumen": {
+   "robusto": {
+    "semillas": [
+     1,
+     2,
+     3
+    ],
+    "AUC prueba (red)": {
+     "media": 0.7069,
+     "de": 0.0076,
+     "min": 0.6998,
+     "max": 0.715
+    },
+    "AUC u0 (prueba)": {
+     "media": 0.706,
+     "de": 0.0106,
+     "min": 0.6939,
+     "max": 0.7135
+    },
+    "AUC u0 (entren.)": {
+     "media": 0.9483,
+     "de": 0.0095,
+     "min": 0.9412,
+     "max": 0.9591
+    },
+    "AUC logistica u0": {
+     "media": 0.706,
+     "de": 0.0106,
+     "min": 0.6939,
+     "max": 0.7135
+    },
+    "AUC logistica 512 (C=0,01)": {
+     "media": 0.711,
+     "de": 0.0027,
+     "min": 0.7091,
+     "max": 0.714
+    },
+    "Sens. u0 (Youden val)": {
+     "media": 0.7289,
+     "de": 0.0676,
+     "min": 0.6675,
+     "max": 0.8014
+    },
+    "Espec. u0 (Youden val)": {
+     "media": 0.5471,
+     "de": 0.0712,
+     "min": 0.4882,
+     "max": 0.6263
+    }
+   }
+  }
+ },
+ "ebpg": {
+  "gradcam_base": {
+   "v": 0.0085,
+   "ic95": [
+    0.0069,
+    0.0103
+   ]
+  },
+  "gradcam_robusto": {
+   "v": 0.0085,
+   "ic95": [
+    0.007,
+    0.01
+   ]
+  },
+  "formula": {
+   "v": 0.0112,
+   "ic95": [
+    0.0093,
+    0.0135
+   ]
+  },
+  "azar_imagen": {
+   "v": 0.005734,
+   "ic95": [
+    0.004938,
+    0.006634
+   ]
+  },
+  "azar_mama": {
+   "v": 0.015312,
+   "ic95": [
+    0.013011,
+    0.018064
+   ]
+  },
+  "n": 368
+ },
+ "semantica": {
+  "u0_vs_patologia": {
+   "d": -0.83,
+   "p_holm": 3.2216227267823057e-31
+  },
+  "u0_vs_margenes": {
+   "H": 53.0779,
+   "p_holm": 3.874485045587813e-11
+  },
+  "u0_vs_forma": {
+   "H": 64.1337,
+   "p_holm": 1.6583544293203984e-13
+  },
+  "u0_vs_densidad": {
+   "H": 2.1859,
+   "p_holm": 1.0
+  },
+  "n_pacientes": 318
+ },
+ "estudio_llm": {
+  "n_informes": 3680,
+  "n": 368,
+  "pacientes": 212,
+  "error_localizador": 0.5652,
+  "incompatible_herramienta": 0.1549,
+  "validacion": {
+   "n": 40,
+   "acuerdo_sin_respaldo": 0.875,
+   "kappa_sin_respaldo": 0.701
+  },
+  "modelos": [
+   {
+    "nombre": "Qwen2.5-1.5B",
+    "sin_respaldo_control": 0.492,
+    "sin_respaldo_evidencia": 0.024,
+    "coherente_control": 0.177,
+    "coherente_evidencia": 0.973,
+    "error_region_evidencia": 0.568,
+    "degenerados_evidencia": 0.076,
+    "segundos": 2.71
+   },
+   {
+    "nombre": "Qwen2.5-3B",
+    "sin_respaldo_control": 0.899,
+    "sin_respaldo_evidencia": 0.171,
+    "coherente_control": 0.598,
+    "coherente_evidencia": 1.0,
+    "error_region_evidencia": 0.568,
+    "degenerados_evidencia": 0.0,
+    "segundos": 3.14
+   },
+   {
+    "nombre": "Phi-3.5-mini",
+    "sin_respaldo_control": 0.875,
+    "sin_respaldo_evidencia": 0.014,
+    "coherente_control": 0.606,
+    "coherente_evidencia": 1.0,
+    "error_region_evidencia": 0.568,
+    "degenerados_evidencia": 0.0,
+    "segundos": 4.74
+   },
+   {
+    "nombre": "Qwen3.5-4B",
+    "sin_respaldo_control": 0.101,
+    "sin_respaldo_evidencia": 0.033,
+    "coherente_control": 0.976,
+    "coherente_evidencia": 1.0,
+    "error_region_evidencia": 0.565,
+    "degenerados_evidencia": 0.0,
+    "segundos": 5.28
+   },
+   {
+    "nombre": "Gemma 4 12B",
+    "sin_respaldo_control": 0.0,
+    "sin_respaldo_evidencia": 0.0,
+    "coherente_control": 1.0,
+    "coherente_evidencia": 1.0,
+    "error_region_evidencia": 0.565,
+    "degenerados_evidencia": 0.0,
+    "segundos": 12.31
+   }
+  ],
+  "fuente": "reports/experiments/estudio_informes_llm_resumen.json (scripts/estudio_informes_llm.py y analizar_informes_llm.py)"
+ },
+ "localizador_448": {
+  "acierto_malignas_224": 0.3711,
+  "acierto_malignas_448": 0.478,
+  "centro_tejido_malignas": 0.3396,
+  "dif_centro_ic95": [
+   0.026,
+   0.2515
+  ],
+  "acierto_global_448": 0.4348,
+  "auc_formula_224": 0.7352,
+  "auc_formula_448": 0.5634,
+  "fuente": "reports/auditoria/segmentacion_resolucion.json"
+ },
+ "birads_radiologo": {
+  "rho": 0.4493,
+  "rho_ic95": [
+   0.3624,
+   0.5228
+  ],
+  "auc_radiologo": 0.7786,
+  "auc_formula": 0.7276,
+  "auc_combinacion": 0.8149,
+  "kappa_categoria": 0.439,
+  "n_imagenes": 927,
+  "n_pacientes": 293,
+  "fuente": "reports/auditoria/u0_birads_radiologo.json"
+ },
+ "birads_cortes": [
+  {
+   "hasta": 0.3572,
+   "cat": "2"
+  },
+  {
+   "hasta": 0.532354726408728,
+   "cat": "3"
+  },
+  {
+   "hasta": 0.6761,
+   "cat": "4"
+  },
+  {
+   "hasta": null,
+   "cat": "5"
+  }
+ ],
+ "birads_nota": "Categoría orientativa de la herramienta: cortes sobre el puntaje anclados en el umbral de decisión y ajustados en validación a la valoración del radiólogo (kappa ponderado 0,44 en prueba). No es una probabilidad de malignidad ni una recomendación médica."
+}

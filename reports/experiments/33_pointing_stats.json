@@ -1,0 +1,41 @@
+{
+  "gc_base": {
+    "ebpg_global": 0.0085,
+    "ci95": [
+      0.0069,
+      0.0103
+    ],
+    "hit_global": 0.0598,
+    "ebpg_mal": 0.0128,
+    "hit_mal": 0.0968,
+    "n": 368,
+    "n_mal": 155
+  },
+  "gc_rob": {
+    "ebpg_global": 0.0085,
+    "ci95": [
+      0.007,
+      0.01
+    ],
+    "hit_global": 0.0163,
+    "ebpg_mal": 0.0122,
+    "hit_mal": 0.0387,
+    "n": 368,
+    "n_mal": 155
+  },
+  "psi": {
+    "ebpg_global": 0.0112,
+    "ci95": [
+      0.0093,
+      0.0135
+    ],
+    "hit_global": 0.0245,
+    "ebpg_mal": 0.0151,
+    "hit_mal": 0.0452,
+    "n": 368,
+    "n_mal": 155
+  },
+  "psi_agree_pred": 0.2962,
+  "wilcoxon_gcrob_vs_gcbase": 0.21208147353562312,
+  "wilcoxon_psi_vs_gcrob": 2.83152049806775e-09
+}

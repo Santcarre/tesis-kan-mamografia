@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Comparativa canónica de métodos de reducción dimensional previa ($D \to 8$) para la destilación simbólica KAN en cuatro familias convolucionales (selección de $D'$ en validación).}
+\label{tab:benchmark_reducciones}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Arquitectura} & \textbf{Método} & \textbf{Dim. $D$} & \textbf{AUC Red} & \textbf{AUC Fórm. D} & \textbf{N. Vars} & \textbf{Longitud} \\ 
+\midrule
+resnet18 & PCA & 512 & 0.7199 & 0.7301 & 2 & 944 car. \\ 
+resnet18 & Linear & 512 & 0.7299 & 0.7272 & 7 & 1220 car. \\ 
+resnet18 & S-PCA & 512 & 0.7310 & 0.7274 & 2 & 636 car. \\ 
+densenet121 & PCA & 1024 & 0.5918 & 0.5787 & 5 & 997 car. \\ 
+densenet121 & Linear & 1024 & 0.6592 & 0.6448 & 6 & 1007 car. \\ 
+densenet121 & S-PCA & 1024 & 0.6768 & 0.6792 & 2 & 1290 car. \\ 
+efficientnet_b0 & PCA & 1280 & 0.5676 & 0.5684 & 2 & 742 car. \\ 
+efficientnet_b0 & Linear & 1280 & 0.6512 & 0.6406 & 6 & 1050 car. \\ 
+efficientnet_b0 & S-PCA & 1280 & 0.6435 & 0.6472 & 2 & 1310 car. \\ 
+resnet50 & PCA & 2048 & 0.6154 & 0.5881 & 5 & 1277 car. \\ 
+resnet50 & Linear & 2048 & 0.6576 & 0.6615 & 5 & 722 car. \\ 
+resnet50 & S-PCA & 2048 & 0.6692 & 0.6763 & 2 & 655 car. \\ 
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,91 @@
+{
+  "semilla_bootstrap": 0,
+  "B": 2000,
+  "n_test": 1012,
+  "auc_u0": {
+    "train": 0.0478,
+    "val": 0.2583,
+    "test": 0.2815
+  },
+  "logistica": {
+    "logistica_u0": {
+      "auc_val": 0.7417,
+      "auc_test": 0.7185,
+      "sens_test": 0.7249,
+      "spec_test": 0.5909,
+      "umbral": "Youden en validacion"
+    },
+    "logistica_z64": {
+      "auc_val": 0.7397,
+      "auc_test": 0.7175,
+      "sens_test": 0.6818,
+      "spec_test": 0.6229,
+      "umbral": "Youden en validacion"
+    },
+    "logistica_u0_u1": {
+      "auc_val": 0.7429,
+      "auc_test": 0.7176,
+      "sens_test": 0.7297,
+      "spec_test": 0.5808,
+      "umbral": "Youden en validacion"
+    },
+    "logistica_512_C1.0": {
+      "auc_val": 0.7307,
+      "auc_test": 0.7086,
+      "sens_test": 0.7392,
+      "spec_test": 0.5774,
+      "umbral": "Youden en validacion"
+    },
+    "logistica_512_C0.01": {
+      "auc_val": 0.7423,
+      "auc_test": 0.7161,
+      "sens_test": 0.7033,
+      "spec_test": 0.6128,
+      "umbral": "Youden en validacion"
+    }
+  },
+  "formula_equivalente_u0": {
+    "sens": 0.7249,
+    "spec": 0.5909,
+    "J": 0.3158
+  },
+  "sens_a_espec_fija_test": {
+    "0.6": 0.7081,
+    "0.663": 0.6459,
+    "0.8": 0.4761,
+    "0.9": 0.3349
+  },
+  "pAUC_estandarizado_FPR<=0.2": 0.6167,
+  "spearman_formula_vs_menos_u0": 1.0,
+  "auc_formula_test": 0.7185,
+  "bootstrap_por_paciente": {
+    "n_pacientes": 318,
+    "auc_ic95": {
+      "Baseline_FC": [
+        0.6892,
+        0.7739
+      ],
+      "Robusto": [
+        0.6791,
+        0.7618
+      ],
+      "R3_formula": [
+        0.6741,
+        0.7591
+      ]
+    },
+    "auc_punto": {
+      "Baseline_FC": 0.7325,
+      "Robusto": 0.7219,
+      "R3_formula": 0.7185
+    },
+    "delta_Baseline_menos_R3": {
+      "media": 0.0145,
+      "ic95": [
+        -0.0203,
+        0.051
+      ],
+      "p_bilateral": 0.439
+    }
+  }
+}

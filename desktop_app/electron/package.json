@@ -1,0 +1,12 @@
+{
+  "name": "prometeo-pacs",
+  "version": "2.0.0",
+  "description": "Estación Radiológica Neuro-Simbólica",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^32.0.0"
+  }
+}

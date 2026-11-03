@@ -1,0 +1,61 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Bytecode y cachés
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Secretos y configuración local
+.env
+
+# Checkpoints y datos pesados (se publican como activos de una versión, no en git)
+model/
+*.state
+*.config.yml
+*_cache_data
+database/
+database
+*.tar.gz
+*.zip
+*.pt
+*.pth
+*.ckpt
+# Salidas intermedias del entrenamiento multi-semilla (los .json de resumen sí se versionan)
+reports/auditoria*/multisemilla/*.npy
+reports/auditoria_smoke/
+
+# Informes PDF generados por la estación (se regeneran; no se versionan)
+reports/pdf/
+desktop_app/reports/
+
+# Cachés de pruebas
+.pytest_cache/
+
+# Paquetes y salidas de build
+dist/
+build/
+*.spec
+*.log
+*.tmp
+
+# IDEs y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Estación de escritorio: dependencias de Node
+node_modules/
+
+# Respaldos locales de la revisión final (no forman parte del repositorio)
+_respaldo*/
+
+# Pruebas de humo de los scripts (salidas de --smoke)
+*_smoke.*
+*_smoke_*
+
+# Experimentos descartados y versiones anteriores que no usa la versión final (se conservan localmente)
+_descartados/

@@ -1,0 +1,50 @@
+{
+  "semilla": 0,
+  "B": 2000,
+  "n_imagenes": 1012,
+  "n_pacientes": 318,
+  "auc_punto": {
+    "Baseline_FC": 0.7325,
+    "Robusto": 0.7219,
+    "R3_formula": 0.7185,
+    "Logistica_512": 0.7161
+  },
+  "contrastes": {
+    "Baseline_FC - R3_formula": {
+      "delta_punto": 0.014,
+      "ic95": [
+        -0.0203,
+        0.051
+      ],
+      "p_bilateral": 0.439,
+      "replicas_validas": 2000
+    },
+    "Robusto - R3_formula": {
+      "delta_punto": 0.0034,
+      "ic95": [
+        -0.0095,
+        0.0166
+      ],
+      "p_bilateral": 0.594,
+      "replicas_validas": 2000
+    },
+    "Logistica_512 - R3_formula": {
+      "delta_punto": -0.0024,
+      "ic95": [
+        -0.0117,
+        0.0075
+      ],
+      "p_bilateral": 0.621,
+      "replicas_validas": 2000
+    },
+    "Baseline_FC - Robusto": {
+      "delta_punto": 0.0106,
+      "ic95": [
+        -0.0212,
+        0.0428
+      ],
+      "p_bilateral": 0.515,
+      "replicas_validas": 2000
+    }
+  }
+}

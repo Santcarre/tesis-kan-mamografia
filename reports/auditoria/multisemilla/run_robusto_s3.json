@@ -1,0 +1,36 @@
+{
+  "modelo": "robusto",
+  "semilla": 3,
+  "mejor_epoca": 19,
+  "mejor_auc_val": 0.7506,
+  "auc_test_red": 0.715,
+  "umbral_youden_val": 0.407,
+  "sens_test": 0.7871,
+  "spec_test": 0.4579,
+  "spca": {
+    "signo_u0": -1.0,
+    "auc_u0": {
+      "train": 0.9412,
+      "val": 0.7453,
+      "test": 0.7135
+    },
+    "u0_youden_val": {
+      "sens": 0.8014,
+      "spec": 0.4882
+    },
+    "logistica_u0": {
+      "auc_val": 0.7453,
+      "auc_test": 0.7135,
+      "sens": 0.8014,
+      "spec": 0.4882
+    },
+    "logistica_512_C0.01": {
+      "auc_val": 0.7412,
+      "auc_test": 0.7098,
+      "sens": 0.6675,
+      "spec": 0.6246
+    }
+  },
+  "segundos": 13702.3,
+  "smoke": false
+}

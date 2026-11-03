@@ -1,0 +1,17 @@
+{
+  "n": 200,
+  "seed": 42,
+  "nota": "LIME y KernelSHAP explican a la propia g(z64) de la canonica R3; el credito analitico es dg/du por coordenada (disperso: solo u0). Top-1 = acuerdo en la variable dominante.",
+  "lime_vs_analytic": {
+    "rho_mean": 0.21483446221182986,
+    "rho_median": 0.21483446221182986,
+    "top1": "200/200",
+    "r2_surrogate_mean": 0.9954572402436139
+  },
+  "shap_vs_analytic": {
+    "rho_mean": 0.1490882966333524,
+    "rho_median": 0.20119417889679303,
+    "top1": "46/200"
+  },
+  "segundos": 50.9
+}

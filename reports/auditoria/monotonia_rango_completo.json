@@ -1,0 +1,38 @@
+{
+  "cota_segunda_derivada": 0.3353,
+  "rangos_u0": {
+    "train": [
+      -3.2682,
+      3.8533
+    ],
+    "val": [
+      -3.4184,
+      2.9498
+    ],
+    "test": [
+      -3.2111,
+      3.0517
+    ]
+  },
+  "malla_puntos": 10000,
+  "intervalos": {
+    "prueba": {
+      "a": -3.2111,
+      "b": 3.0517,
+      "h": 0.0006263426342636436,
+      "gprima_min_malla": -0.87975,
+      "gprima_max_malla": -0.44489,
+      "cota_superior_gprima": -0.44478,
+      "estrictamente_decreciente": true
+    },
+    "tres_particiones": {
+      "a": -3.4184,
+      "b": 3.8533,
+      "h": 0.0007272427242726032,
+      "gprima_min_malla": -0.87975,
+      "gprima_max_malla": -0.32392,
+      "cota_superior_gprima": -0.3238,
+      "estrictamente_decreciente": true
+    }
+  }
+}
