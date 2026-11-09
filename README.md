@@ -23,7 +23,7 @@ Mamografía 224×224 ──ResNet-18──▶ GAP ∈ ℝ⁵¹² ──S-PCA─�
                        (robusto)                (u₀ = 1.ª coord.)               (749 caracteres, monótona)
 ```
 
-La contribución es una **explicación de fidelidad**: la fórmula es una versión comprimida y auditable de la red que conserva su logit, su dirección de decisión y su mapa espacial, pero **no** sus canales individuales. **No es una mejora del AUC.**
+La contribución es una **explicación de fidelidad**: la fórmula es una versión comprimida y auditable de la red que conserva su logit, su dirección de decisión y su mapa espacial, y solo en parte sus canales individuales. **No es una mejora del AUC.**
 
 ### Resultados principales (partición de prueba: 1012 imágenes, 318 pacientes)
 
@@ -38,7 +38,7 @@ La contribución es una **explicación de fidelidad**: la fórmula es una versi�
 | Punto de operación | sensibilidad 72,49 % y especificidad 59,09 % con el umbral de Youden fijado en validación (es un punto de operación, no una mejor discriminación) |
 | Fidelidad al logit de la red | $R^2 = 0{,}91$ en prueba; $u_0$ domina el crédito en el 89,1 % de los casos |
 | Fidelidad de dirección / de mapa espacial | coseno 0,70 con la dirección de decisión; correlación 0,85–0,87 con el mapa de esa dirección |
-| Fidelidad de canales | **no se conserva**: 0/200 casos con el mismo canal dominante |
+| Fidelidad de canales | parcial: con la misma definición de atribución en los dos lados, $\rho = 0{,}79$ entre canales, pero el canal dominante coincide solo en 26 de 200 casos |
 | Explicaciones por regiones de la imagen | LIME y KernelSHAP (8000 muestras) le atribuyen a la fórmula casi lo mismo que a la red ($\rho = 0{,}90$) |
 | Relación con el radiólogo | $\rho = 0{,}45$ con su categoría BI-RADS, también dentro de cada patología; AUC del radiólogo 0,779 frente a 0,728 de la fórmula, y 0,815 combinados; categoría orientativa de la herramienta con $\kappa_w = 0{,}44$ |
 | Localización (EBPG continuo, malignas) | 1,51 %: por encima del azar por área de la imagen (0,71 %) y por debajo del azar por área de tejido (1,87 %) |
@@ -56,7 +56,8 @@ Los valores proceden de los archivos de `reports/` (véase la sección 4) y se c
 - La localización es limitada: a la resolución de la red (mapa de 7×7) ningún mapa supera al «centro del tejido mamario»; con la imagen a 448 px el foco de la fórmula sí lo supera en acierto de región, pero su centroide queda más lejos de la lesión, y esa resolución se eligió mirando la prueba, así que el resultado es exploratorio (controles en `reports/auditoria/`).
 - LIME es exacto sobre un logit afín; KernelSHAP estándar converge cuando el presupuesto de muestras supera aproximadamente la dimensión (`reports/auditoria/auditoria_explicadores.json`).
 - El extractor robusto muestra sobreajuste (AUC de entrenamiento cercano a 0,95 frente a 0,72 en prueba); la variabilidad entre semillas del extractor se estudia con `scripts/entrenar_multisemilla.py` (semillas 1, 2 y 3).
-- El estudio de informes mide invenciones con un detector automático validado a mano en 40 informes, que las subestima; ningún radiólogo evaluó la calidad clínica de los textos.
+- El estudio de informes mide invenciones con un detector automático validado en 40 informes, que las subestima; la referencia de esa validación la propuso un asistente de IA y la revisó el autor, sin un segundo anotador humano, y ningún radiólogo evaluó la calidad clínica de los textos.
+- Las etiquetas de los manifiestos se asignaron por paciente (la patología de su primera lesión en las tablas de CBIS-DDSM): el 1,6 % de las imágenes de prueba y el 3,3 % de las de entrenamiento no coinciden con la patología de su vista. Con la etiqueta por vista, el AUC de prueba de la fórmula es 0,7141, el de la red robusta 0,7178 y el de la red base 0,7270 (`scripts/etiquetas_por_vista.py`).
 
 ---
 
@@ -104,7 +105,7 @@ pip install -r requirements.txt   # instale antes torch/torchvision que correspo
 | Embeddings GAP del extractor robusto (`artifacts/output/embeddings/f2robust_*.npy`, 13 MB) | incluidos |
 | Artefactos canónicos y resultados (`reports/experiments/`, `reports/auditoria/`) | incluidos |
 | Checkpoints `resnet18_robust_best.pt` (extractor robusto, 44,8 MB) y `resnet18_baseline_v2.pt` (referencia, 44,8 MB; solo para el brazo «Grad-CAM del baseline») | **no incluidos**; se publican como activos de la versión (*Release*) del repositorio. SHA-256: `c64a0ca03b1e5f6adca9f98de5354dbb8f1338026e822429d49fa84366e178e1` (robusto) y `224e1631c90801373e7bfb9ea4eabfc6e70d3e0ae59f58e5c9677ddf8f1e99da` (baseline). Colóquelos en `reports/models/` |
-| Imágenes CBIS-DDSM | **no incluidas**; descárguelas de TCIA (ver «Datos y créditos»). Se espera la estructura `database/archive/csv/` y `database/archive/jpeg/` en la raíz del repo, o defina `TESIS_CODIGOS` |
+| Imágenes CBIS-DDSM | **no incluidas**. El trabajo usa la versión JPEG publicada en Kaggle ([CBIS-DDSM: Breast Cancer Image Dataset](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset), versión 1); al descomprimirla en `database/` queda la estructura que esperan los scripts, `database/archive/csv/` y `database/archive/jpeg/`, en la raíz del repo (o defina `TESIS_CODIGOS`). Los DICOM originales están en TCIA (ver «Datos y créditos») |
 
 Variables de entorno opcionales (véase `.env.example`): `TESIS_CODIGOS` (raíz del repo), `TESIS_REP` (por defecto `artifacts/`), `TESIS_EMBEDDINGS_DIR`, `TESIS_PDF_DIR`, `OPENROUTER_API_KEY` (solo si se usa el modelo remoto del generador de informes).
 
@@ -136,6 +137,8 @@ Ejecute los scripts **desde la raíz del repositorio**. Requisitos: **E** = embe
 | Fórmula frente a Grad-CAM (mapas y WSSS) | `scripts/formula_vs_gradcam_wsss.py` | `reports/auditoria/formula_vs_gradcam_wsss*.{json,csv}` | C, D |
 | Estabilidad del extractor robusto (semillas 1, 2, 3) | `scripts/entrenar_multisemilla.py` | `reports/auditoria/multisemilla/` | D, GPU |
 | Coherencia KAN frente a atribuciones post-hoc | `scripts/compute_coherence_kan64.py`, `scripts/compute_coherence_kan_self.py`, `scripts/check_lime_active_magnitude.py` | `reports/experiments/coherence_*.json` | C |
+| Fidelidad por canales con la misma definición de atribución en la fórmula y en la cabeza | `scripts/canales_atribucion.py` | `reports/auditoria/canales_atribucion.json` | E, C |
+| Etiquetas de los manifiestos frente a la patología de cada vista, y AUC de prueba con la etiqueta por vista | `scripts/etiquetas_por_vista.py` | `reports/auditoria/etiquetas_por_vista.json` | CSV de CBIS-DDSM |
 | Asociación de $u_0$ con la categoría BI-RADS del radiólogo y cortes de la categoría de la herramienta | `scripts/u0_birads_radiologo.py` (figura: `scripts/u0_birads_radiologo_figura.py`) | `reports/auditoria/u0_birads_radiologo.json`, `u0_birads_radiologo_prueba.csv` | E, D |
 | Asociación de $u_0$ con BI-RADS por imagen y dentro de cada clase | `scripts/semantica_u0_por_imagen.py`, `scripts/semantica_u0_dentro_de_clase.py` (figura: `scripts/semantica_u0_figura.py`) | `reports/auditoria/semantica_u0_*.json` | E, D |
 | Explicaciones por regiones de la imagen (LIME y KernelSHAP de la red y de la fórmula, borrado e inserción) y su convergencia | `scripts/explicadores_imagen.py --n-muestras 8000` (antes, `--convergencia`) | `reports/auditoria/explicadores_imagen*.{json,csv,npz}`, `explicadores_convergencia.json` | C, D |
@@ -193,6 +196,7 @@ Los datos de la interfaz (`desktop_app/ui/data/`) se regeneran con `python scrip
 
 - **CBIS-DDSM (cita del conjunto):** Sawyer-Lee, R., Gimenez, F., Hoogi, A. y Rubin, D. (2016). *Curated Breast Imaging Subset of Digital Database for Screening Mammography (CBIS-DDSM)* [Conjunto de datos]. The Cancer Imaging Archive. https://doi.org/10.7937/K9/TCIA.2016.7O02S9CY. Licencia CC BY 3.0; uso sujeto a la [política de uso de datos de TCIA](https://www.cancerimagingarchive.net/data-usage-policies-and-restrictions/). Las imágenes que muestra Prometeo son recortes de 224×224 de este conjunto, con mapas superpuestos (adaptación); no se usan para identificar a ninguna paciente.
 - **CBIS-DDSM (artículo):** Lee, R. S., Gimenez, F., Hoogi, A., Miyake, K. K., Gorovoy, M. y Rubin, D. L. (2017). *A curated mammography data set for use in computer-aided detection and diagnosis research.* Scientific Data, 4, 170177. Distribuido por The Cancer Imaging Archive (TCIA) bajo licencia CC BY 3.0. Las imágenes de `desktop_app/demo_samples/` proceden de este conjunto.
+- **Versión JPEG usada:** Awsaf (2021). *CBIS-DDSM: Breast Cancer Image Dataset* [Conjunto de datos], versión 1. Kaggle. https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset. Licencia CC BY-SA 3.0.
 - **TCIA:** Clark, K. et al. (2013). *The Cancer Imaging Archive (TCIA): Maintaining and Operating a Public Information Repository.* Journal of Digital Imaging, 26(6), 1045–1057.
 - La pseudonimización de pacientes (`P_xxxxx`) es la del conjunto público; este repositorio no contiene datos clínicos adicionales.
 

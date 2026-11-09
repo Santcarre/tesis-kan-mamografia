@@ -1,0 +1,52 @@
+{
+  "referencia": "recorte: patología de su lesión; mamografía completa: maligna si alguna lesión de la vista lo es",
+  "train": {
+    "n": 4278,
+    "sin_referencia": 0,
+    "distintas": 142,
+    "porcentaje": 3.32,
+    "pacientes": 38,
+    "maligna_en_manifiesto_benigna_en_vista": 64,
+    "benigna_en_manifiesto_maligna_en_vista": 78
+  },
+  "val": {
+    "n": 1134,
+    "sin_referencia": 0,
+    "distintas": 44,
+    "porcentaje": 3.88,
+    "pacientes": 12,
+    "maligna_en_manifiesto_benigna_en_vista": 32,
+    "benigna_en_manifiesto_maligna_en_vista": 12
+  },
+  "test": {
+    "n": 1012,
+    "sin_referencia": 0,
+    "distintas": 16,
+    "porcentaje": 1.58,
+    "pacientes": 6,
+    "maligna_en_manifiesto_benigna_en_vista": 10,
+    "benigna_en_manifiesto_maligna_en_vista": 6,
+    "pacientes_afectados": [
+      "P_00353",
+      "P_00820",
+      "P_00951",
+      "P_01502",
+      "P_01623",
+      "P_01800"
+    ]
+  },
+  "auc_prueba": {
+    "R3_formula": {
+      "etiqueta_manifiesto": 0.7185,
+      "etiqueta_por_vista": 0.7141
+    },
+    "Robusto": {
+      "etiqueta_manifiesto": 0.7219,
+      "etiqueta_por_vista": 0.7178
+    },
+    "Baseline_FC": {
+      "etiqueta_manifiesto": 0.7325,
+      "etiqueta_por_vista": 0.727
+    }
+  }
+}

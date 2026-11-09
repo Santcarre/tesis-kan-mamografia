@@ -1,0 +1,17 @@
+{
+  "n_casos": 200,
+  "semilla": 42,
+  "nota": "gradiente: definición de coherence_kan64.json; misma_definicion: gradiente por descriptor centrado en la fórmula y en la cabeza (valor de Shapley exacto de un modelo afín).",
+  "coseno_a_vs_du0dz": -0.7030797676387038,
+  "canales_dominantes_distintos_formula": 85,
+  "gradiente": {
+    "top1_coincide": "0/200",
+    "spearman_media": -0.119,
+    "spearman_mediana": -0.1062
+  },
+  "misma_definicion": {
+    "top1_coincide": "26/200",
+    "spearman_media": 0.7911,
+    "spearman_mediana": 0.7929
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "equipo": {
+    "fecha": "2026-10-21T00:45:14",
+    "sistema": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "procesador": "AMD Ryzen 5 5600X 6-Core Processor",
+    "nucleos_logicos": 2,
+    "python": "3.10.12",
+    "numpy": "2.2.6",
+    "nucleos_disponibles_para_el_proceso": 1,
+    "ram_total_mb": 3915,
+    "hilos_pedidos_al_entorno": "1"
+  },
+  "modo": "un_nucleo",
+  "bloque_a": {
+    "u0_un_producto_punto_numpy": {
+      "mediana_us": 0.92,
+      "p95_us": 1.96,
+      "n": 2000
+    },
+    "proyeccion_completa_a_64_variables": {
+      "mediana_us": 8.92,
+      "p95_us": 17.55,
+      "n": 2000
+    },
+    "formula_g_un_caso": {
+      "mediana_us": 32.76,
+      "p95_us": 55.2,
+      "n": 2000
+    },
+    "decision_completa_desde_512_numpy": {
+      "mediana_us": 34.02,
+      "p95_us": 61.95,
+      "n": 2000
+    },
+    "decision_completa_desde_512_python_puro": {
+      "mediana_us": 65.49,
+      "p95_us": 114.62,
+      "n": 400
+    },
+    "lote_1012_con_numpy_total": {
+      "mediana_us": 251.2,
+      "p95_us": 423.23,
+      "n": 50
+    },
+    "lote_1012_con_numpy_por_caso_us": 0.248,
+    "archivos_necesarios_bytes": {
+      "formula_canonica_json": 1334,
+      "vector_u0_512_coeficientes_float64": 4104,
+      "reductor_completo_npz": 142816,
+      "checkpoint_resnet18_robusto": 44786507,
+      "caracteres_de_fben_mas_fmal_en_el_json": 742
+    },
+    "comprobacion": {
+      "diferencia_maxima_u0_atajo_vs_completo": 1.3322676295501878e-15,
+      "veredictos_iguales_en_1012": true,
+      "casos": 1012
+    },
+    "memoria_mb": {
+      "proceso_con_numpy_antes": 32.9,
+      "despues": 35.4
+    }
+  },
+  "bloque_c": {
+    "reducir_3000x4000_a_224x224": {
+      "mediana_us": 50757.89,
+      "p95_us": 56767.74,
+      "n": 100
+    },
+    "nota": "No incluye leer ni decodificar el archivo DICOM."
+  }
+}
